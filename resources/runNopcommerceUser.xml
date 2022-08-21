@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Nopcommerce User">
+
+  <test name="Run test on Firefox">
+    <classes>
+      <class name="comNopcommerceUser.Level_15_Allure"/>
+    </classes>
+  </test>
+  
+</suite>
