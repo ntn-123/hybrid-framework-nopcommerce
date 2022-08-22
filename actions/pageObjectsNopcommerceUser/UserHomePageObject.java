@@ -32,4 +32,9 @@ public class UserHomePageObject extends BasePage {
 		return PageGeneratorManagerNopcommerce.getUserLoginPage(driver);
 	}
 
+	public boolean isMyAccountLinkDisplayed() {
+		waitForElementVisible(driver, UserHomePageUI.MY_ACCOUNT_LINK);
+		return isElementDisplayed(driver, UserHomePageUI.MY_ACCOUNT_LINK);
+	}
+
 }

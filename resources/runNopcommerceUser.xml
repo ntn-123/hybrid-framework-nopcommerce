@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Nopcommerce User">
-
-  <test name="Run test on Firefox">
-    <classes>
-      <class name="comNopcommerceUser.Level_15_Allure"/>
-    </classes>
-  </test>
+	
+	<listeners>
+		<listener class-name="commons.MethodListener"></listener>
+		<listener class-name="reportConfig.AllureTestListener"></listener>
+	</listeners>
+	
+	<parameter name="environment" value="DEV"/>
+	
+	<test name="Run test on Firefox">
+		<parameter name="browser" value="firefox"/>
+    	<classes>
+      		<class name="comNopcommerceUser.Level_15_Allure"/>
+    	</classes>
+  	</test>
   
 </suite>
