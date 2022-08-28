@@ -8,6 +8,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import pageObjectsNopcommerceUser.PageGeneratorManagerNopcommerce;
 import pageObjectsNopcommerceUser.UserHomePageObject;
 import pageObjectsNopcommerceUser.UserLoginPageObject;
@@ -35,6 +38,8 @@ public class Level_15_Allure extends BaseTest{
 		password = "123456";
 	}
 	
+	@Description("Register to system")
+	@Severity(SeverityLevel.NORMAL)
 	@Test
 	public void User_01_Register() {
 		registerPage = homePage.clickToRegisterLink();
@@ -50,6 +55,8 @@ public class Level_15_Allure extends BaseTest{
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 	}
 
+	@Description("Login to system")
+	@Severity(SeverityLevel.NORMAL)
 	@Test
 	public void User_02_Login() {
 		homePage = registerPage.clickToLogoutLink();
