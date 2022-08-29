@@ -8,6 +8,7 @@ import org.testng.annotations.Parameters;
 import commons.BaseTest;
 import pageObjectsNopcommerceUser.PageGeneratorManagerNopcommerce;
 import pageObjectsNopcommerceUser.UserHomePageObject;
+import pageObjectsNopcommerceUser.UserLoginPageObject;
 import pageObjectsNopcommerceUser.UserRegisterPageObject;
 
 
@@ -18,7 +19,7 @@ public class Common_01_Register_Cookie extends BaseTest{
 	public static String emailAddress, password;
 	private UserHomePageObject homePage;
 	private UserRegisterPageObject registerPage;
-	
+	private UserLoginPageObject loginPage;
 	
 	@Parameters("browser")
 	@BeforeTest(description = "Create new common user for all classes test")
@@ -51,6 +52,20 @@ public class Common_01_Register_Cookie extends BaseTest{
 		
 		log.info("Register - Step 5: Click to logout link");
 		homePage = registerPage.clickToLogoutLink();
+		
+
+		log.info("Login - Step 01: Click to login link");
+		loginPage = homePage.clickToLoginLink();
+		
+		log.info("Login - Step 02: Input existing email and password");
+		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inputToPasswordTextbox(password);
+	
+		log.info("Login - Step 03: Click to login button");
+		homePage = loginPage.clickToLoginButton();
+		
+		log.info("Login - Step 04: Verify login success");
+		verifyTrue(homePage.isMyAccountLinkDisplayed());
 	
 	}
 
