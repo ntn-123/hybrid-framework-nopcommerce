@@ -1,5 +1,8 @@
 package comNopcommerceCommon;
 
+import java.util.Set;
+
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -20,6 +23,7 @@ public class Common_01_Register_Cookie extends BaseTest{
 	private UserHomePageObject homePage;
 	private UserRegisterPageObject registerPage;
 	private UserLoginPageObject loginPage;
+	public static Set<Cookie> loggedCookies;
 	
 	@Parameters("browser")
 	@BeforeTest(description = "Create new common user for all classes test")
@@ -66,6 +70,8 @@ public class Common_01_Register_Cookie extends BaseTest{
 		
 		log.info("Login - Step 04: Verify login success");
 		verifyTrue(homePage.isMyAccountLinkDisplayed());
+		
+		loggedCookies = homePage.getAllCookie(driver);
 	
 	}
 
