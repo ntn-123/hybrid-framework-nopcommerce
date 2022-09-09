@@ -1,0 +1,21 @@
+package pageObjectsWordpressAdmin;
+
+import org.openqa.selenium.WebDriver;
+
+public class AdminPageGeneratorManager {
+	public static AdminLoginPO getAdminLoginPage(WebDriver driver) {
+		return new AdminLoginPO(driver);
+	}
+	
+	public static AdminDashboardPO getAdminDashboardPage(WebDriver driver) {
+		return new AdminDashboardPO(driver);
+	}
+	
+	public static AdminPostSearchPO getAdminPostSearchPage(WebDriver driver) {
+		return new AdminPostSearchPO(driver);
+	}
+
+	public static AdminPostAddNewPO getAdminAddNewPage(WebDriver driver) {
+		return new AdminPostAddNewPO(driver);
+	}
+}
