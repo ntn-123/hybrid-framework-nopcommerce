@@ -3,7 +3,7 @@
 	
 	<listeners>
 		<listener class-name="commons.MethodListener"></listener>
-		<listener class-name="reportConfig.AllureTestListener"></listener>
+<!-- 		<listener class-name="reportConfig.AllureTestListener"></listener> -->
 	</listeners>
 	
 	<parameter name="environment" value="DEV"/>
@@ -11,8 +11,7 @@
 	<test name="Run test on Firefox">
 		<parameter name="browser" value="firefox"/>
     	<classes>
-    		<class name="comNopcommerceCommon.Common_01_Register" />
-      		<class name="comNopcommerceUser.Level_16_Share_Data"/>
+      		<class name="comNopcommerceUser.Level_18_Pattern_Object"/>
     	</classes>
   	</test>
   

@@ -1,0 +1,42 @@
+[INFO ] [2022-09-03 11:53:11,066] Register - Step 1: Click to register link
+[INFO ] [2022-09-03 11:53:12,044] Register - Step 2: Input customer info
+[INFO ] [2022-09-03 11:53:12,358] Register - Step 3: Click to register button
+[INFO ] [2022-09-03 11:53:13,476] Register - Step 4: Verify register success
+[INFO ] [2022-09-03 11:53:13,517]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-09-03 11:53:13,517] Register - Step 5: Click to logout link
+[INFO ] [2022-09-03 11:53:14,390] Login - Step 01: Click to login link
+[INFO ] [2022-09-03 11:53:14,921] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-03 11:53:15,157] Login - Step 03: Click to login button
+[INFO ] [2022-09-03 11:53:16,342] Login - Step 04: Verify login success
+[INFO ] [2022-09-03 11:53:16,383]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-09-03 11:53:16,384] Customer info - Step 01: Click to my account link
+[INFO ] [2022-09-03 11:53:25,465] Customer info - Step 02: Verify customer info page display
+[INFO ] [2022-09-03 11:53:25,510]  -------------------------- FAILED -------------------------- 
+[INFO ] [2022-09-03 12:00:54,153] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-03 12:01:12,834] Register - Step 1: Click to register link
+[INFO ] [2022-09-03 12:01:21,267] Login - Step 01: Click to login link
+[INFO ] [2022-09-03 12:01:21,283] OS name = mac os x
+[INFO ] [2022-09-03 12:01:21,283] Driver instance name = firefoxdriver: firefox on mac (d0ceceba-2f66-41e8-8c37-2d9ecaab2ee8)
+[INFO ] [2022-09-03 12:01:21,288] Tried to run command without establishing a connection
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'MacBook-Pro-cua-Nguyen.local', ip: '2402:800:61ac:f7e4:0:0:0:1%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.11'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 104.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220829141339, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 21.6.0, moz:processID: 2997, moz:profile: /var/folders/cs/gbwwxkjx0px..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d0ceceba-2f66-41e8-8c37-2d9ecaab2ee8
+[INFO ] [2022-09-03 12:02:56,364] Register - Step 1: Click to register link
+[INFO ] [2022-09-03 12:02:59,226] Register - Step 3: Click to register button
+[INFO ] [2022-09-03 12:03:00,190] Register - Step 4: Verify register success
+[INFO ] [2022-09-03 12:03:00,235] Register - Step 5: Click to logout link
+[INFO ] [2022-09-03 12:03:01,228] Login - Step 01: Click to login link
+[INFO ] [2022-09-03 12:03:01,882] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-03 12:03:01,984] Login - Step 03: Click to login button
+[INFO ] [2022-09-03 12:03:02,760] Login - Step 04: Verify login success
+[INFO ] [2022-09-03 12:03:02,804]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-03 12:03:02,817] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-03 12:03:03,511] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-03 12:03:03,553]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-03 12:03:03,553] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-03 12:03:03,588] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-03 12:03:03,617] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-03 12:03:03,679] OS name = mac os x
+[INFO ] [2022-09-03 12:03:03,679] Driver instance name = firefoxdriver: firefox on mac (f786972a-c89b-44f7-9da1-9ed573486385)

@@ -34,4 +34,11 @@ public class UserHomePageObject extends BasePage {
 		return isElementDisplayed(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 	}
 
+	@Step("Click to my account link")
+	public UserCustomerInfoPageObject clickToMyAccountLink() {
+		waitForElementClickable(driver, UserHomePageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, UserHomePageUI.MY_ACCOUNT_LINK);
+		return PageGeneratorManagerNopcommerce.getUserCustomerInfoPage(driver);
+	}
+
 }

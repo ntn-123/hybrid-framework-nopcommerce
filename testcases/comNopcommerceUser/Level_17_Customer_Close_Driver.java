@@ -1,36 +1,28 @@
-package comNopcommerceCommon;
+package comNopcommerceUser;
 
-import java.util.Set;
-
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjectsNopcommerceUser.PageGeneratorManagerNopcommerce;
-import pageObjectsNopcommerceUser.UserHomePageObject;
-import pageObjectsNopcommerceUser.UserLoginPageObject;
-import pageObjectsNopcommerceUser.UserRegisterPageObject;
+import pageObjectsNopcommerceUser.*;
 
-
-public class Common_01_Register_Cookie extends BaseTest{
+public class Level_17_Customer_Close_Driver extends BaseTest{
 	
 	private WebDriver driver;
-	private String firstName, lastName;
-	public static String emailAddress, password;
+	private String firstName, lastName, emailAddress, password;
 	private UserHomePageObject homePage;
 	private UserRegisterPageObject registerPage;
 	private UserLoginPageObject loginPage;
-	public static Set<Cookie> loggedCookies;
 	
 	@Parameters("browser")
-	@BeforeTest(description = "Create new common user for all classes test")
-	public void Register(String browserName) {
-		
+	@BeforeClass
+	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		
+		//driver = null;
 		homePage = PageGeneratorManagerNopcommerce.getUserHomePage(driver);
 
 		firstName = "sa";
@@ -51,35 +43,44 @@ public class Common_01_Register_Cookie extends BaseTest{
 		log.info("Register - Step 3: Click to register button");
 		registerPage.clickToRegisterButton();
 		
+		//driver = null;
+		
 		log.info("Register - Step 4: Verify register success");
-		verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed...");
+		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 		
 		log.info("Register - Step 5: Click to logout link");
 		homePage = registerPage.clickToLogoutLink();
 		
-
 		log.info("Login - Step 01: Click to login link");
 		loginPage = homePage.clickToLoginLink();
 		
 		log.info("Login - Step 02: Input existing email and password");
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox(password);
-	
+		
 		log.info("Login - Step 03: Click to login button");
 		homePage = loginPage.clickToLoginButton();
 		
 		log.info("Login - Step 04: Verify login success");
-		verifyTrue(homePage.isMyAccountLinkDisplayed());
+		verifyFalse(homePage.isMyAccountLinkDisplayed());
 		
-		loggedCookies = homePage.getAllCookie(driver);
-		for (Cookie cookie : loggedCookies) {
-			System.out.println("Cookie at common class: " + cookie);
-		}
+	}
+	
+	@Test
+	public void User_01_Register_Login() {
+		
+	
 	}
 
-	@AfterTest
+	@Test
+	public void User_02_Login() {
+		
+	}
+	
+	@AfterClass(alwaysRun = true)
 	public void afterClass() {
-		driver.quit();
+		closeBrowserAndDriver();
+		//driver.quit();
 	}
 	
 

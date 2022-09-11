@@ -1,0 +1,17 @@
+[INFO ] [2022-09-03 12:02:56,364] Register - Step 1: Click to register link
+[INFO ] [2022-09-03 12:02:59,226] Register - Step 3: Click to register button
+[INFO ] [2022-09-03 12:03:00,190] Register - Step 4: Verify register success
+[INFO ] [2022-09-03 12:03:00,235] Register - Step 5: Click to logout link
+[INFO ] [2022-09-03 12:03:01,228] Login - Step 01: Click to login link
+[INFO ] [2022-09-03 12:03:01,882] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-03 12:03:01,984] Login - Step 03: Click to login button
+[INFO ] [2022-09-03 12:03:02,760] Login - Step 04: Verify login success
+[INFO ] [2022-09-03 12:03:02,804]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-03 12:03:02,817] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-03 12:03:03,511] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-03 12:03:03,553]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-03 12:03:03,553] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-03 12:03:03,588] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-03 12:03:03,617] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-03 12:03:03,679] OS name = mac os x
+[INFO ] [2022-09-03 12:03:03,679] Driver instance name = firefoxdriver: firefox on mac (f786972a-c89b-44f7-9da1-9ed573486385)

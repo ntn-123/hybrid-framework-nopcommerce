@@ -15,4 +15,8 @@ public class PageGeneratorManagerNopcommerce {
 		return new UserRegisterPageObject(driver);
 	}
 	
+	public static UserCustomerInfoPageObject getUserCustomerInfoPage(WebDriver driver) {
+		return new UserCustomerInfoPageObject(driver);
+	}
+	
 }

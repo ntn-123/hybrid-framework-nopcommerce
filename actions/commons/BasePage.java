@@ -19,7 +19,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageUIsBasePage.BasePageUIJQueryUploadFile;
+import pageUIsBasePage.BasePageJQueryUploadFileUI;
+import pageUIsBasePage.BasePageNopcommerceUI;
 
 public class BasePage {
 	
@@ -236,9 +237,13 @@ public class BasePage {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public String getElementAttribute(WebDriver driver, String locatorType, String attributeName) {
 		return getWebElement(driver, locatorType).getAttribute(attributeName);
+	}
+
+	public String getElementAttribute(WebDriver driver, String locatorType, String attributeName, String... dynamicValues) {
+		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).getAttribute(attributeName);
 	}
 	
 	public String getElementCssValue(WebDriver driver, String locatorType, String propertyName) {
@@ -515,7 +520,7 @@ public class BasePage {
 		fullFileName = fullFileName.trim();
 		//fullFileName = filePath + fileNames;
 		System.out.println(fullFileName);
-		getWebElement(driver, BasePageUIJQueryUploadFile.UPLOAD_FILE).sendKeys(fullFileName);
+		getWebElement(driver, BasePageJQueryUploadFileUI.UPLOAD_FILE).sendKeys(fullFileName);
 	}
 	
 //	// Toi uu o bai hoc Level_07_Switch page
@@ -612,7 +617,79 @@ public class BasePage {
 //		clickToElementByJS(driver, BasePageUI.LOGOUT_LINK_AT_ADMIN_PAGE);
 //		return commons.PageGeneratorManager.getAdminLoginPage(driver);
 //	}
+	
 
+	/**
+	 * Enter to dynamic Textbox by ID
+	 * @author NguyenNT
+	 * @param driver
+	 * @param textboxID
+	 * @param value
+	 */
+	public void inputTextboxByID(WebDriver driver, String textboxID, String value) {
+		waitForElementVisible(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendKeyToElement(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+	}
+	
+	/**
+	 * Click to dynamic button by text
+	 * @author NguyenNT
+	 * @param driver
+	 * @param buttonText
+	 */
+	public void clickToButtonByText(WebDriver driver, String buttonText) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+		clickToElement(driver, BasePageNopcommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+	}
+
+	/**
+	 * Select to dynamic dropdown by attribute name
+	 * @author NguyenNT
+	 * @param driver
+	 * @param attributeName
+	 * @param itemValue
+	 */
+	public void selectToDropdownByAttributeName(WebDriver driver, String attributeName, String itemValue) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_DROPDOWN_BY_ATTRIBUTE_NAME, attributeName);
+		selectItemInDefaultDropdown(driver, BasePageNopcommerceUI.DYNAMIC_DROPDOWN_BY_ATTRIBUTE_NAME, itemValue, attributeName);
+	}
+
+	/**
+	 * Check to dynamic radio button by label
+	 * @author NguyenNT
+	 * @param driver
+	 * @param genderLabel
+	 */
+	public void checkToRadioButtonByLabel(WebDriver driver, String radioButtonLabel) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabel);
+		checkToDefaultCheckboxOrRadio(driver, BasePageNopcommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabel);
+	}
+	
+	/**
+	 * Check to dynamic checkbox by label
+	 * @author NguyenNT
+	 * @param driver
+	 * @param checkboxLabel
+	 */
+	public void checkToCheckboxByLabel(WebDriver driver, String checkboxLabel) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabel);
+		checkToDefaultCheckboxOrRadio(driver, BasePageNopcommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabel);
+	}
+
+
+	/**
+	 * Get textbox value by attribute value
+	 * @author NguyenNT
+	 * @param driver
+	 * @param textboxID
+	 * @return
+	 */
+	public String getTextboxValueByID(WebDriver driver, String textboxID) {
+		waitForElementVisible(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		return getElementAttribute(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
+	}
+	
+	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	private long shortTimeout = GlobalConstants.SHOTR_TIMEOUT;
 	
