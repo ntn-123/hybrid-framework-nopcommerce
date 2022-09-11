@@ -3,6 +3,7 @@ package pageObjectsWordpressAdmin;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import pageUIsWordpressAdmin.AdminLoginPageUI;
 
 public class AdminLoginPO extends BasePage{
 	private WebDriver driver;
@@ -12,18 +13,18 @@ public class AdminLoginPO extends BasePage{
 	}
 
 	public void enterToUsernameTextbox(String adminUsername) {
-		// TODO Auto-generated method stub
-		
+		waitForElementVisible(driver, AdminLoginPageUI.USERNAME_TEXTBOX);
+		sendKeyToElement(driver, AdminLoginPageUI.USERNAME_TEXTBOX, adminUsername);
 	}
 
 	public void enterToPasswordTextbox(String adminPassword) {
-		// TODO Auto-generated method stub
-		
+		waitForElementVisible(driver, AdminLoginPageUI.PASSWORD_TEXTBOX);
+		sendKeyToElement(driver, AdminLoginPageUI.PASSWORD_TEXTBOX, adminPassword);
 	}
 
 	public void clickToLoginButton() {
-		// TODO Auto-generated method stub
-		
+		waitForElementClickable(driver, AdminLoginPageUI.LOGIN_BUTTON);
+		clickToElement(driver, AdminLoginPageUI.LOGIN_BUTTON);
 	}
 	
 }

@@ -65,8 +65,8 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 		log.info("Create_Post - Step 05: Click to 'Publish' button");
 		adminPostAddNewPage.clickToPublishButton();
 		
-		log.info("Create_Post - Step 06: Verify 'Post published' message is displayed");
-		Assert.assertTrue(adminPostAddNewPage.isPostPublishMessageDisplayed());
+		log.info("Create_Post - Step 06: Verify 'Post updated.' message is displayed");
+		Assert.assertTrue(adminPostAddNewPage.isPostPublishMessageDisplayed("Post updated."));
 	}
 	
 	@Test

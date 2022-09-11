@@ -26,7 +26,7 @@ public class AdminPostAddNewPO extends BasePage{
 		
 	}
 
-	public boolean isPostPublishMessageDisplayed() {
+	public boolean isPostPublishMessageDisplayed(String string) {
 		// TODO Auto-generated method stub
 		return false;
 	}
