@@ -107,9 +107,9 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		if(browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions options = new FirefoxOptions();
-			options.setAcceptInsecureCerts(false);
-			driver = new FirefoxDriver(options);
+			//FirefoxOptions options = new FirefoxOptions();
+			//options.setAcceptInsecureCerts(false);
+			driver = new FirefoxDriver();
 		} else if(browserName.equals("h_firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();

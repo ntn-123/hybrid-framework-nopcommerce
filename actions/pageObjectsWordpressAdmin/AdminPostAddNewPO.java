@@ -28,9 +28,6 @@ public class AdminPostAddNewPO extends BasePage{
 	public void clickToPublishButton() {
 		waitForElementClickable(driver, AdminPostAddNewPageUI.PUBLISH_BUTTON);
 		clickToElement(driver, AdminPostAddNewPageUI.PUBLISH_BUTTON);
-		
-		waitForElementClickable(driver, AdminPostAddNewPageUI.PRE_PUBLISH_BUTTON);
-		clickToElement(driver, AdminPostAddNewPageUI.PRE_PUBLISH_BUTTON);
 	}
 
 	public boolean isPostPublishMessageDisplayed(String postPublishMessage) {
@@ -46,6 +43,11 @@ public class AdminPostAddNewPO extends BasePage{
 	public void clickToCloseButtonAtPopup() {
 		waitForElementClickable(driver, AdminPostAddNewPageUI.CLOSE_BUTTON);
 		clickToElement(driver, AdminPostAddNewPageUI.CLOSE_BUTTON);
+	}
+
+	public void clickToPrePublishButton() {
+		waitForElementClickable(driver, AdminPostAddNewPageUI.PRE_PUBLISH_BUTTON);
+		clickToElement(driver, AdminPostAddNewPageUI.PRE_PUBLISH_BUTTON);
 	}
 
 }

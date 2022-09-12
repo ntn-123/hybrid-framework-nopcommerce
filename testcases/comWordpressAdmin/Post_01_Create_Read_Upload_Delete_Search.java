@@ -26,11 +26,12 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 	private int randomNumber = getRandomNumber();
 	private String addNewPostTitle = "Live Coding Title" + randomNumber;
 	private String addNewPostBody = "Live Coding Body" + randomNumber;
+	private String author = "automationfc";
 	
 	@Parameters({"browser", "urlAdmin"})
 	@BeforeClass
 	public void beforeClass(String browserName, String adminUrl) {
-		log.info("Pre-condition - Step 01: Open browser and admin Url");
+		log.info("Pre-condition - Step 01: Open browser and admin site");
 		driver = getBrowserDriver(browserName, adminUrl);
 		adminLoginPage = AdminPageGeneratorManager.getAdminLoginPage(driver);
 		
@@ -68,14 +69,32 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 		log.info("Create_Post - Step 06: Click to 'Publish' button");
 		adminPostAddNewPage.clickToPublishButton();
 		
-		log.info("Create_Post - Step 07: Verify 'Post updated.' message is displayed");
-		Assert.assertTrue(adminPostAddNewPage.isPostPublishMessageDisplayed("Post updated."));
+		log.info("Create_Post - Step 07: Click to 'Pre-Publish' button");
+		adminPostAddNewPage.clickToPrePublishButton();
+		
+		log.info("Create_Post - Step 08: Verify 'Post updated.' message is displayed");
+		verifyTrue(adminPostAddNewPage.isPostPublishMessageDisplayed("Post published."));
 	}
 	
 	@Test
 	public void Post_02_Search_Post() {
 		log.info("Search_Post - Step 01: Open 'Search Post' page");
 		adminPostSearchPage = adminPostAddNewPage.openSearchPostPageUrl(searchPostUrl);
+		
+		log.info("Search_Post - Step 02: Enter to search post textbox");
+		//adminPostSearchPage.enterToSearchPostTextbox(addNewPostTitle);
+		
+		log.info("Search_Post - Step 03: Click to 'Search Posts' button");
+		//adminPostSearchPage.clickToSearchPostsButton();
+		
+		log.info("Search_Post - Step 04: Verify search table contain '" + addNewPostTitle + "'");
+		//verifyEquals(adminPostSearchPage, addNewPostTitle);
+		log.info("Search_Post - Step 05: Verify search table contain '" + author + "'");
+		
+		log.info("Search_Post - Step 06: Open End User Site");
+		log.info("Search_Post - Step 07: Verify Post info displayed at Home page");
+		log.info("Search_Post - Step 08: Click to Post tittle");
+		log.info("Search_Post - Step 09: Verify Post info displayed at Post detail page");
 	}
 	
 	//@Test
