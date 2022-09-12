@@ -107,7 +107,9 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		if(browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions options = new FirefoxOptions();
+			options.setAcceptInsecureCerts(false);
+			driver = new FirefoxDriver(options);
 		} else if(browserName.equals("h_firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
@@ -116,7 +118,9 @@ public class BaseTest {
 			driver = new FirefoxDriver(options);
 		} else if(browserName.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(options);
 		} else if(browserName.equals("h_chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -197,7 +201,7 @@ public class BaseTest {
 			log.info(" -------------------------- FAILED -------------------------- ");
 			pass = false;
 
-			// Add lỗi vào ReportNG
+			// Add l盻擁 vﾃ�o ReportNG
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
 		}

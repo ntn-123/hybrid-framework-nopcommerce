@@ -3,6 +3,7 @@ package pageObjectsWordpressAdmin;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import pageUIsWordpressAdmin.AdminPostAddNewPageUI;
 
 public class AdminPostAddNewPO extends BasePage{
 	private WebDriver driver;
@@ -12,28 +13,39 @@ public class AdminPostAddNewPO extends BasePage{
 	}
 
 	public void enterToAddNewPostTitle(String addNewPostTitle) {
-		// TODO Auto-generated method stub
-		
+		waitForElementVisible(driver, AdminPostAddNewPageUI.TITTLE_TEXTBOX);
+		sendKeyToElement(driver, AdminPostAddNewPageUI.TITTLE_TEXTBOX, addNewPostTitle);
 	}
 
 	public void enterToAddNewPostBody(String addNewPostBody) {
-		// TODO Auto-generated method stub
+		waitForElementVisible(driver, AdminPostAddNewPageUI.BODY_BUTTON);
+		clickToElement(driver, AdminPostAddNewPageUI.BODY_BUTTON);
 		
+		waitForElementVisible(driver, AdminPostAddNewPageUI.BODY_TEXTBOX);
+		sendKeyToElement(driver, AdminPostAddNewPageUI.BODY_TEXTBOX, addNewPostBody);
 	}
 
 	public void clickToPublishButton() {
-		// TODO Auto-generated method stub
+		waitForElementClickable(driver, AdminPostAddNewPageUI.PUBLISH_BUTTON);
+		clickToElement(driver, AdminPostAddNewPageUI.PUBLISH_BUTTON);
 		
+		waitForElementClickable(driver, AdminPostAddNewPageUI.PRE_PUBLISH_BUTTON);
+		clickToElement(driver, AdminPostAddNewPageUI.PRE_PUBLISH_BUTTON);
 	}
 
-	public boolean isPostPublishMessageDisplayed(String string) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isPostPublishMessageDisplayed(String postPublishMessage) {
+		waitForElementVisible(driver, AdminPostAddNewPageUI.PUBLISHED_MESSAGE, postPublishMessage);
+		return isElementDisplayed(driver, AdminPostAddNewPageUI.PUBLISHED_MESSAGE, postPublishMessage);
 	}
 
-	public void openSearchPostPageUrl(String searchPostUrl) {
-		// TODO Auto-generated method stub
-		
+	public AdminPostSearchPO openSearchPostPageUrl(String searchPostUrl) {
+		openPageUrl(driver, searchPostUrl);
+		return AdminPageGeneratorManager.getAdminPostSearchPage(driver);
+	}
+
+	public void clickToCloseButtonAtPopup() {
+		waitForElementClickable(driver, AdminPostAddNewPageUI.CLOSE_BUTTON);
+		clickToElement(driver, AdminPostAddNewPageUI.CLOSE_BUTTON);
 	}
 
 }

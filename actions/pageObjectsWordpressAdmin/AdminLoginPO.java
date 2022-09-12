@@ -22,9 +22,10 @@ public class AdminLoginPO extends BasePage{
 		sendKeyToElement(driver, AdminLoginPageUI.PASSWORD_TEXTBOX, adminPassword);
 	}
 
-	public void clickToLoginButton() {
+	public AdminDashboardPO clickToLoginButton() {
 		waitForElementClickable(driver, AdminLoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, AdminLoginPageUI.LOGIN_BUTTON);
+		return AdminPageGeneratorManager.getAdminDashboardPage(driver);
 	}
 	
 }

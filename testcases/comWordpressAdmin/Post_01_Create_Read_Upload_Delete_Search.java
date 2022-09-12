@@ -2,6 +2,7 @@ package comWordpressAdmin;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -22,8 +23,9 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 	private String adminUsername = "automationfc";
 	private String adminPassword = "automationfc";
 	private String searchPostUrl;
-	private String addNewPostTitle = "";
-	private String addNewPostBody = "";
+	private int randomNumber = getRandomNumber();
+	private String addNewPostTitle = "Live Coding Title" + randomNumber;
+	private String addNewPostBody = "Live Coding Body" + randomNumber;
 	
 	@Parameters({"browser", "urlAdmin"})
 	@BeforeClass
@@ -39,56 +41,61 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 		adminLoginPage.enterToPasswordTextbox(adminPassword);
 		
 		log.info("Pre-condition - Step 04: Click to Login button");
-		adminLoginPage.clickToLoginButton();
-		
-		adminDashboardPage = AdminPageGeneratorManager.getAdminDashboardPage(driver);
-		
+		adminDashboardPage = adminLoginPage.clickToLoginButton();
 	}
 	
 	@Test
 	public void Post_01_Create_New_Post() {
 		log.info("Create_Post - Step 01: Click to 'Posts' menu link");
-		searchPostUrl = "";
-		adminDashboardPage.clickToPostMenuLink();
-		adminPostSearchPage = AdminPageGeneratorManager.getAdminPostSearchPage(driver);
+		adminPostSearchPage = adminDashboardPage.clickToPostMenuLink();
+
+		log.info("Create_Post - Step 02: Get 'Search Posts' page Url");
+		searchPostUrl = adminPostSearchPage.getPageUrl(driver);
 		
-		log.info("Create_Post - Step 02: Click to 'Add new' button");
-		adminPostSearchPage.clickToAddNewButton();
-		adminPostAddNewPage = AdminPageGeneratorManager.getAdminAddNewPage(driver);
+		log.info("Create_Post - Step 03: Click to 'Add new' button");
+		adminPostAddNewPage = adminPostSearchPage.clickToAddNewButton();
 		
-		log.info("Create_Post - Step 03: Enter to post title");
+		log.info("Create_Post - Step 3-2: Click to close button at popup");
+		adminPostAddNewPage.sleepInSecond(3);
+		adminPostAddNewPage.clickToCloseButtonAtPopup();
+		
+		log.info("Create_Post - Step 04: Enter to post title");
 		adminPostAddNewPage.enterToAddNewPostTitle(addNewPostTitle);
 		
-		log.info("Create_Post - Step 04: Enter to post body");
+		log.info("Create_Post - Step 05: Enter to post body");
 		adminPostAddNewPage.enterToAddNewPostBody(addNewPostBody);
 		
-		log.info("Create_Post - Step 05: Click to 'Publish' button");
+		log.info("Create_Post - Step 06: Click to 'Publish' button");
 		adminPostAddNewPage.clickToPublishButton();
 		
-		log.info("Create_Post - Step 06: Verify 'Post updated.' message is displayed");
+		log.info("Create_Post - Step 07: Verify 'Post updated.' message is displayed");
 		Assert.assertTrue(adminPostAddNewPage.isPostPublishMessageDisplayed("Post updated."));
 	}
 	
 	@Test
 	public void Post_02_Search_Post() {
 		log.info("Search_Post - Step 01: Open 'Search Post' page");
-		adminPostAddNewPage.openSearchPostPageUrl(searchPostUrl);
-		adminPostSearchPage = AdminPageGeneratorManager.getAdminPostSearchPage(driver);
+		adminPostSearchPage = adminPostAddNewPage.openSearchPostPageUrl(searchPostUrl);
 	}
 	
-	@Test
+	//@Test
 	public void Post_03_View_Post() {
 		
 	}
 	
-	@Test
+	//@Test
 	public void Post_04_Edit_Post() {
 		
 	}
 	
-	@Test
+	//@Test
 	public void Post_05_Delete_Post() {
 		
+	}
+
+	@AfterClass(alwaysRun = true)
+	public void afterClass() {
+		closeBrowserAndDriver();
 	}
 	
 	
