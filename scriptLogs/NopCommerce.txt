@@ -1,0 +1,17 @@
+[INFO ] [2022-09-12 21:30:20,573] Pre-condition - Step 01: Open browser and admin Url
+[INFO ] [2022-09-12 21:30:24,534] Pre-condition - Step 02: Enter to Username text box with value automationfc
+[INFO ] [2022-09-12 21:30:24,703] Pre-condition - Step 03: Enter to Password text box with value automationfc
+[INFO ] [2022-09-12 21:30:24,761] Pre-condition - Step 04: Click to Login button
+[INFO ] [2022-09-12 21:30:25,612] Create_Post - Step 01: Click to 'Posts' menu link
+[INFO ] [2022-09-12 21:30:25,934] Create_Post - Step 02: Get 'Search Posts' page Url
+[INFO ] [2022-09-12 21:30:25,941] Create_Post - Step 03: Click to 'Add new' button
+[INFO ] [2022-09-12 21:30:26,591] Create_Post - Step 3-2: Click to close button at popup
+[INFO ] [2022-09-12 21:30:29,890] Create_Post - Step 04: Enter to post title
+[INFO ] [2022-09-12 21:30:30,155] Create_Post - Step 05: Enter to post body
+[INFO ] [2022-09-12 21:30:31,241] Create_Post - Step 06: Click to 'Publish' button
+[INFO ] [2022-09-12 21:30:31,577] Create_Post - Step 07: Click to 'Pre-Publish' button
+[INFO ] [2022-09-12 21:30:31,852] Create_Post - Step 08: Verify 'Post updated.' message is displayed
+[INFO ] [2022-09-12 21:30:31,902]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-12 21:30:32,027] Search_Post - Step 01: Open 'Search Post' page
+[INFO ] [2022-09-12 21:30:32,421] OS name = mac os x
+[INFO ] [2022-09-12 21:30:32,421] Driver instance name = firefoxdriver: firefox on mac (6f6748ec-d287-46cb-b0c6-9e951a9ed530)
