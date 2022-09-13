@@ -1,4 +1,4 @@
-package pageUIsWordpressAdmin;
+package pageUIsWordpress;
 
 public class AdminPostAddNewPageUI {
 	public static final String TITTLE_TEXTBOX = "css=h1.wp-block-post-title";

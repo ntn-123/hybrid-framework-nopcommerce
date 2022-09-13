@@ -9,9 +9,9 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 	
-<!-- 	<parameter name="urlAdmin" value="https://automationfc.net/wp-admin"/> -->
-	<parameter name="urlAdmin" value="https://localhost/wp-admin/" />
-<!--  	<parameter name="url" value="https://automationfc.net"/> -->
+	<parameter name="urlAdmin" value="https://automationfc.net/wp-admin"/>
+<!-- 	<parameter name="urlAdmin" value="https://localhost/wp-admin/" /> -->
+ 	<parameter name="urlUser" value="https://automationfc.net"/>
 	
 	<test name="Run test on Firefox">
 		<parameter name="browser" value="firefox"/>

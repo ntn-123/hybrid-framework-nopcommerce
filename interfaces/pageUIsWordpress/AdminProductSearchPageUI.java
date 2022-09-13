@@ -1,4 +1,4 @@
-package pageUIsWordpressAdmin;
+package pageUIsWordpress;
 
 public class AdminProductSearchPageUI {
 

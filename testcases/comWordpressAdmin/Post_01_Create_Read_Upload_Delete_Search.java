@@ -8,32 +8,23 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjectsWordpressAdmin.AdminDashboardPO;
-import pageObjectsWordpressAdmin.AdminLoginPO;
-import pageObjectsWordpressAdmin.AdminPageGeneratorManager;
-import pageObjectsWordpressAdmin.AdminPostAddNewPO;
-import pageObjectsWordpressAdmin.AdminPostSearchPO;
+import pageObjectsWordpress.AdminDashboardPO;
+import pageObjectsWordpress.AdminLoginPO;
+import pageObjectsWordpress.AdminPostAddNewPO;
+import pageObjectsWordpress.AdminPostSearchPO;
+import pageObjectsWordpress.PageGeneratorManager;
+import pageObjectsWordpress.UserHomePO;
+import pageObjectsWordpress.UserPostDetailPO;
 
 public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
-	private WebDriver driver;
-	private AdminLoginPO adminLoginPage;
-	private AdminDashboardPO adminDashboardPage;
-	private AdminPostSearchPO adminPostSearchPage;
-	private AdminPostAddNewPO adminPostAddNewPage;
-	private String adminUsername = "automationfc";
-	private String adminPassword = "automationfc";
-	private String searchPostUrl;
-	private int randomNumber = getRandomNumber();
-	private String addNewPostTitle = "Live Coding Title" + randomNumber;
-	private String addNewPostBody = "Live Coding Body" + randomNumber;
-	private String author = "automationfc";
-	
-	@Parameters({"browser", "urlAdmin"})
+	@Parameters({"browser", "urlAdmin", "urlUser"})
 	@BeforeClass
-	public void beforeClass(String browserName, String adminUrl) {
+	public void beforeClass(String browserName, String adminUrl, String endUserUrl) {
 		log.info("Pre-condition - Step 01: Open browser and admin site");
-		driver = getBrowserDriver(browserName, adminUrl);
-		adminLoginPage = AdminPageGeneratorManager.getAdminLoginPage(driver);
+		this.adminUrl = adminUrl;
+		this.endUserUrl = endUserUrl;
+		driver = getBrowserDriver(browserName, this.adminUrl);
+		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
 		
 		log.info("Pre-condition - Step 02: Enter to Username text box with value " + adminUsername);
 		adminLoginPage.enterToUsernameTextbox(adminUsername);
@@ -61,10 +52,10 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 		adminPostAddNewPage.clickToCloseButtonAtPopup();
 		
 		log.info("Create_Post - Step 04: Enter to post title");
-		adminPostAddNewPage.enterToAddNewPostTitle(addNewPostTitle);
+		adminPostAddNewPage.enterToAddNewPostTitle(postTitle);
 		
 		log.info("Create_Post - Step 05: Enter to post body");
-		adminPostAddNewPage.enterToAddNewPostBody(addNewPostBody);
+		adminPostAddNewPage.enterToAddNewPostBody(postBody);
 		
 		log.info("Create_Post - Step 06: Click to 'Publish' button");
 		adminPostAddNewPage.clickToPublishButton();
@@ -77,38 +68,48 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 	}
 	
 	@Test
-	public void Post_02_Search_Post() {
+	public void Post_02_Search_And_View_Post() {
 		log.info("Search_Post - Step 01: Open 'Search Post' page");
 		adminPostSearchPage = adminPostAddNewPage.openSearchPostPageUrl(searchPostUrl);
 		
 		log.info("Search_Post - Step 02: Enter to search post textbox");
-		//adminPostSearchPage.enterToSearchPostTextbox(addNewPostTitle);
+		adminPostSearchPage.enterToSearchTextbox(postTitle);
 		
 		log.info("Search_Post - Step 03: Click to 'Search Posts' button");
-		//adminPostSearchPage.clickToSearchPostsButton();
+		adminPostSearchPage.clickToSearchPostsButton();
 		
-		log.info("Search_Post - Step 04: Verify search table contain '" + addNewPostTitle + "'");
-		//verifyEquals(adminPostSearchPage, addNewPostTitle);
-		log.info("Search_Post - Step 05: Verify search table contain '" + author + "'");
+		log.info("Search_Post - Step 04: Verify search table contain '" + postTitle + "'");
+		adminPostSearchPage.isPostSearchTableDisplayed("title", postTitle);
+		
+		log.info("Search_Post - Step 05: Verify search table contain '" + authorName + "'");
+		adminPostSearchPage.isPostSearchTableDisplayed("author", authorName);
 		
 		log.info("Search_Post - Step 06: Open End User Site");
+		userHomePage = adminPostSearchPage.openEndUserSite(this.endUserUrl);
+		
 		log.info("Search_Post - Step 07: Verify Post info displayed at Home page");
+		verifyTrue(userHomePage.isPostInfoDisplayed(postTitle));
+		verifyTrue(userHomePage.isPostInfoDisplayed(postBody));
+		verifyTrue(userHomePage.isPostInfoDisplayed(authorName));
+		verifyTrue(userHomePage.isPostInfoDisplayed(currentDay));
+		
 		log.info("Search_Post - Step 08: Click to Post tittle");
+		userPostDetailPage = userHomePage.clickToPostTitle(postTitle);
+		
 		log.info("Search_Post - Step 09: Verify Post info displayed at Post detail page");
+		verifyTrue(userPostDetailPage.isPostInfoDisplayed(postTitle));
+		verifyTrue(userPostDetailPage.isPostInfoDisplayed(postBody));
+		verifyTrue(userPostDetailPage.isPostInfoDisplayed(authorName));
+		verifyTrue(userPostDetailPage.isPostInfoDisplayed(currentDay));
 	}
 	
 	//@Test
-	public void Post_03_View_Post() {
+	public void Post_03_Edit_Post() {
 		
 	}
 	
 	//@Test
-	public void Post_04_Edit_Post() {
-		
-	}
-	
-	//@Test
-	public void Post_05_Delete_Post() {
+	public void Post_04_Delete_Post() {
 		
 	}
 
@@ -116,6 +117,23 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 	public void afterClass() {
 		closeBrowserAndDriver();
 	}
+	
+	private WebDriver driver;
+	private AdminLoginPO adminLoginPage;
+	private AdminDashboardPO adminDashboardPage;
+	private AdminPostSearchPO adminPostSearchPage;
+	private AdminPostAddNewPO adminPostAddNewPage;
+	private UserHomePO userHomePage;
+	private UserPostDetailPO userPostDetailPage;
+	private String adminUsername = "automationfc";
+	private String adminPassword = "automationfc";
+	private String searchPostUrl;
+	private int randomNumber = getRandomNumber();
+	private String postTitle = "Live Coding Title" + randomNumber;
+	private String postBody = "Live Coding Body" + randomNumber;
+	private String authorName = "Automation Admin";
+	private String adminUrl, endUserUrl;
+	private String currentDay = getCurrentDay();
 	
 	
 }

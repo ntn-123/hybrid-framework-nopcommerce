@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjectsWordpress.UserHomePO;
 import pageUIsBasePage.BasePageJQueryUploadFileUI;
 import pageUIsBasePage.BasePageNopcommerceUI;
 
@@ -689,6 +690,11 @@ public class BasePage {
 		return getElementAttribute(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
 	}
 	
+
+	public UserHomePO openEndUserSite(String endUserUrl) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	private long shortTimeout = GlobalConstants.SHOTR_TIMEOUT;

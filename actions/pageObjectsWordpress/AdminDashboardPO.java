@@ -1,9 +1,9 @@
-package pageObjectsWordpressAdmin;
+package pageObjectsWordpress;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIsWordpressAdmin.AdminDashboardPageUI;
+import pageUIsWordpress.AdminDashboardPageUI;
 
 public class AdminDashboardPO extends BasePage{
 	private WebDriver driver;
@@ -15,7 +15,7 @@ public class AdminDashboardPO extends BasePage{
 	public AdminPostSearchPO clickToPostMenuLink() {
 		waitForElementClickable(driver, AdminDashboardPageUI.POST_MENU_LINK);
 		clickToElement(driver, AdminDashboardPageUI.POST_MENU_LINK);
-		return AdminPageGeneratorManager.getAdminPostSearchPage(driver);
+		return PageGeneratorManager.getAdminPostSearchPage(driver);
 	}
 	
 }

@@ -1,4 +1,4 @@
-package pageObjectsWordpressAdmin;
+package pageObjectsWordpress;
 
 import org.openqa.selenium.WebDriver;
 

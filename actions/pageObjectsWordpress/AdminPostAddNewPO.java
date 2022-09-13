@@ -1,9 +1,9 @@
-package pageObjectsWordpressAdmin;
+package pageObjectsWordpress;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIsWordpressAdmin.AdminPostAddNewPageUI;
+import pageUIsWordpress.AdminPostAddNewPageUI;
 
 public class AdminPostAddNewPO extends BasePage{
 	private WebDriver driver;
@@ -37,7 +37,7 @@ public class AdminPostAddNewPO extends BasePage{
 
 	public AdminPostSearchPO openSearchPostPageUrl(String searchPostUrl) {
 		openPageUrl(driver, searchPostUrl);
-		return AdminPageGeneratorManager.getAdminPostSearchPage(driver);
+		return PageGeneratorManager.getAdminPostSearchPage(driver);
 	}
 
 	public void clickToCloseButtonAtPopup() {

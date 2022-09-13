@@ -1,13 +1,13 @@
-package pageObjectsWordpressUser;
+package pageObjectsWordpress;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-public class UserHomePO extends BasePage{
+public class AdminPostTagPO extends BasePage{
 	private WebDriver driver;
 
-	protected UserHomePO(WebDriver driver) {
+	protected AdminPostTagPO(WebDriver driver) {
 		this.driver = driver;
 	}
 
