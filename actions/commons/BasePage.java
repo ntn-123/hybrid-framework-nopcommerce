@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjectsWordpress.PageGeneratorManager;
 import pageObjectsWordpress.UserHomePO;
 import pageUIsBasePage.BasePageJQueryUploadFileUI;
 import pageUIsBasePage.BasePageNopcommerceUI;
@@ -691,9 +692,9 @@ public class BasePage {
 	}
 	
 
-	public UserHomePO openEndUserSite(String endUserUrl) {
-		// TODO Auto-generated method stub
-		return null;
+	public UserHomePO openEndUserSite(WebDriver driver, String endUserUrl) {
+		openPageUrl(driver, endUserUrl);
+		return PageGeneratorManager.getUserHomePage(driver);
 	}
 	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;

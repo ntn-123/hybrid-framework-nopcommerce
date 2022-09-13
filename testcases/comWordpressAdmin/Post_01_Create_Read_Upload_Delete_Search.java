@@ -79,19 +79,19 @@ public class Post_01_Create_Read_Upload_Delete_Search extends BaseTest{
 		adminPostSearchPage.clickToSearchPostsButton();
 		
 		log.info("Search_Post - Step 04: Verify search table contain '" + postTitle + "'");
-		adminPostSearchPage.isPostSearchTableDisplayed("title", postTitle);
+		verifyTrue(adminPostSearchPage.isPostSearchTableDisplayed("title", postTitle));
 		
 		log.info("Search_Post - Step 05: Verify search table contain '" + authorName + "'");
-		adminPostSearchPage.isPostSearchTableDisplayed("author", authorName);
+		verifyTrue(adminPostSearchPage.isPostSearchTableDisplayed("author", authorName));
 		
 		log.info("Search_Post - Step 06: Open End User Site");
-		userHomePage = adminPostSearchPage.openEndUserSite(this.endUserUrl);
+		userHomePage = adminPostSearchPage.openEndUserSite(driver, this.endUserUrl);
 		
 		log.info("Search_Post - Step 07: Verify Post info displayed at Home page");
-		verifyTrue(userHomePage.isPostInfoDisplayed(postTitle));
-		verifyTrue(userHomePage.isPostInfoDisplayed(postBody));
-		verifyTrue(userHomePage.isPostInfoDisplayed(authorName));
-		verifyTrue(userHomePage.isPostInfoDisplayed(currentDay));
+		verifyTrue(userHomePage.isPostInfoDisplayedWithPostTitle(postTitle));
+		verifyTrue(userHomePage.isPostInfoDisplayedWithPostBody(postTitle, postBody));
+		verifyTrue(userHomePage.isPostInfoDisplayedWithAuthor(postTitle, authorName));
+		verifyTrue(userHomePage.isPostInfoDisplayedWithCurrentDay(postTitle, currentDay));
 		
 		log.info("Search_Post - Step 08: Click to Post tittle");
 		userPostDetailPage = userHomePage.clickToPostTitle(postTitle);

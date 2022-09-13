@@ -19,18 +19,19 @@ public class AdminPostSearchPO extends BasePage{
 	}
 
 	public void enterToSearchTextbox(String postTitle) {
-		// TODO Auto-generated method stub
-		
+		waitForElementVisible(driver, AdminPostSearchPageUI.POST_TEXTBOX);
+		sendKeyToElement(driver, AdminPostSearchPageUI.POST_TEXTBOX, postTitle);
 	}
 
 	public void clickToSearchPostsButton() {
-		// TODO Auto-generated method stub
-		
+		waitForElementClickable(driver, AdminPostSearchPageUI.SEARCH_POSTS_BUTTON);
+		clickToElement(driver, AdminPostSearchPageUI.SEARCH_POSTS_BUTTON);
 	}
 
-	public void isPostSearchTableDisplayed(String string, String postTitle) {
-		// TODO Auto-generated method stub
-		
+	public boolean isPostSearchTableDisplayed(String headerID, String cellValue) {
+		int headerIndex = getElementsSize(driver, AdminPostSearchPageUI.TABLE_HEADER_INDEX_BY_HEADER_ID, headerID) + 1;
+		waitForElementVisible(driver, AdminPostSearchPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(headerIndex), cellValue);
+		return isElementDisplayed(driver, AdminPostSearchPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(headerIndex), cellValue);
 	}
 
 

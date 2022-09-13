@@ -11,14 +11,29 @@ public class UserHomePO extends BasePage{
 		this.driver = driver;
 	}
 
-	public boolean isPostInfoDisplayed(String postTitle) {
+	public UserPostDetailPO clickToPostTitle(String postTitle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean isPostInfoDisplayedWithPostTitle(String postTitle) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	public UserPostDetailPO clickToPostTitle(String postTitle) {
+	public boolean isPostInfoDisplayedWithPostBody(String postTitle, String postBody) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
+	}
+
+	public boolean isPostInfoDisplayedWithAuthor(String postTitle, String authorName) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isPostInfoDisplayedWithCurrentDay(String postTitle, String currentDay) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
