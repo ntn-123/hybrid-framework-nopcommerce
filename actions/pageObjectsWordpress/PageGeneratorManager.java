@@ -15,15 +15,19 @@ public class PageGeneratorManager {
 		return new AdminPostSearchPO(driver);
 	}
 	
-	public static AdminPostAddNewPO getAdminAddNewPage(WebDriver driver) {
-		return new AdminPostAddNewPO(driver);
+	public static AdminPostAddNewOrUpdatePO getAdminAddNewOrUpdatePage(WebDriver driver) {
+		return new AdminPostAddNewOrUpdatePO(driver);
 	}
 	
 	public static UserHomePO getUserHomePage(WebDriver driver) {
 		return new UserHomePO(driver);
 	}
-
+	
 	public static UserPostDetailPO getUserPostDetailPage(WebDriver driver) {
 		return new UserPostDetailPO(driver);
+	}
+
+	public static UserPostSearchPO getUserPostSearchPage(WebDriver driver) {
+		return new UserPostSearchPO(driver);
 	}
 }

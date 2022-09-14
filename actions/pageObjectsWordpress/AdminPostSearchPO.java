@@ -12,10 +12,10 @@ public class AdminPostSearchPO extends BasePage{
 		this.driver = driver;
 	}
 
-	public AdminPostAddNewPO clickToAddNewButton() {
+	public AdminPostAddNewOrUpdatePO clickToAddNewButton() {
 		waitForElementClickable(driver, AdminPostSearchPageUI.ADD_NEW_BUTTON);
 		clickToElement(driver, AdminPostSearchPageUI.ADD_NEW_BUTTON);
-		return PageGeneratorManager.getAdminAddNewPage(driver);
+		return PageGeneratorManager.getAdminAddNewOrUpdatePage(driver);
 	}
 
 	public void enterToSearchTextbox(String postTitle) {
@@ -32,6 +32,38 @@ public class AdminPostSearchPO extends BasePage{
 		int headerIndex = getElementsSize(driver, AdminPostSearchPageUI.TABLE_HEADER_INDEX_BY_HEADER_ID, headerID) + 1;
 		waitForElementVisible(driver, AdminPostSearchPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(headerIndex), cellValue);
 		return isElementDisplayed(driver, AdminPostSearchPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(headerIndex), cellValue);
+	}
+
+	public AdminPostAddNewOrUpdatePO clickToPostTitleLink(String headerID, String cellValue) {
+		int headerIndex = getElementsSize(driver, AdminPostSearchPageUI.TABLE_HEADER_INDEX_BY_HEADER_ID, headerID) + 1;
+		waitForElementClickable(driver, AdminPostSearchPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(headerIndex), cellValue);
+		clickToElement(driver, AdminPostSearchPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(headerIndex), cellValue);
+		return PageGeneratorManager.getAdminAddNewOrUpdatePage(driver);
+	}
+
+	public void selectPostCheckboxByTitle(String editPostTitle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void selectItemInActionDropdown(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clickToApplyButton() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean isMoveToTrashMessageDisplayed(String string) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isNoPostsFoundMessageDisplayed(String string) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 

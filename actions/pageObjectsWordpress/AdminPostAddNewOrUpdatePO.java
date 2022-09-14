@@ -5,27 +5,30 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIsWordpress.AdminPostAddNewPageUI;
 
-public class AdminPostAddNewPO extends BasePage{
+public class AdminPostAddNewOrUpdatePO extends BasePage{
 	private WebDriver driver;
 
-	protected AdminPostAddNewPO(WebDriver driver) {
+	protected AdminPostAddNewOrUpdatePO(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public void enterToAddNewPostTitle(String addNewPostTitle) {
+	public void enterToAddNewOrUpdatePostTitle(String addNewPostTitle) {
 		waitForElementVisible(driver, AdminPostAddNewPageUI.TITTLE_TEXTBOX);
 		sendKeyToElement(driver, AdminPostAddNewPageUI.TITTLE_TEXTBOX, addNewPostTitle);
 	}
 
-	public void enterToAddNewPostBody(String addNewPostBody) {
+	public void clickToAddNewPostBody() {
 		waitForElementVisible(driver, AdminPostAddNewPageUI.BODY_BUTTON);
 		clickToElement(driver, AdminPostAddNewPageUI.BODY_BUTTON);
-		
-		waitForElementVisible(driver, AdminPostAddNewPageUI.BODY_TEXTBOX);
-		sendKeyToElement(driver, AdminPostAddNewPageUI.BODY_TEXTBOX, addNewPostBody);
 	}
 
-	public void clickToPublishButton() {
+	public void enterToAddNewOrUpdatePostBody(String postBody) {
+		waitForElementVisible(driver, AdminPostAddNewPageUI.BODY_TEXTBOX);
+		clearValueInElementByDeleteKey(driver, AdminPostAddNewPageUI.BODY_TEXTBOX);
+		sendKeyToElement(driver, AdminPostAddNewPageUI.BODY_TEXTBOX, postBody);
+	}
+
+	public void clickToPublishOrUpdateButton() {
 		waitForElementClickable(driver, AdminPostAddNewPageUI.PUBLISH_BUTTON);
 		clickToElement(driver, AdminPostAddNewPageUI.PUBLISH_BUTTON);
 	}

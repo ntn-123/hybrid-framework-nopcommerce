@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjectsWordpress.AdminDashboardPO;
 import pageObjectsWordpress.PageGeneratorManager;
 import pageObjectsWordpress.UserHomePO;
 import pageUIsBasePage.BasePageJQueryUploadFileUI;
@@ -179,6 +180,11 @@ public class BasePage {
 		WebElement element = getWebElement(driver, locatorType);
 		element.clear();
 		element.sendKeys(textValue);
+	}
+	
+	public void clearValueInElementByDeleteKey(WebDriver driver, String locatorType) {
+		WebElement element = getWebElement(driver, locatorType);
+		element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 	}
 	
 	public void sendKeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValues) {
@@ -695,6 +701,11 @@ public class BasePage {
 	public UserHomePO openEndUserSite(WebDriver driver, String endUserUrl) {
 		openPageUrl(driver, endUserUrl);
 		return PageGeneratorManager.getUserHomePage(driver);
+	}
+	
+	public AdminDashboardPO openAdminSite(WebDriver driver, String adminUrl) {
+		openPageUrl(driver, adminUrl);
+		return PageGeneratorManager.getAdminDashboardPage(driver);
 	}
 	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
