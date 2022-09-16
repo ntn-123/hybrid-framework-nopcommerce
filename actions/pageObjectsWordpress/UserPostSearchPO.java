@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageUIsWordpress.UserPostDetailPageUI;
+import pageUIsWordpress.UserPostSearchPageUI;
 
 public class UserPostSearchPO extends BasePage{
 	private WebDriver driver;
@@ -12,8 +13,8 @@ public class UserPostSearchPO extends BasePage{
 		this.driver = driver;
 	}
 
-	public boolean isNothingFoundMessageDisplayed(String string) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isNothingFoundMessageDisplayed(String message) {
+		waitForElementVisible(driver, UserPostSearchPageUI.NOTHING_FOUND_MESSAGE, message);
+		return isElementDisplayed(driver, UserPostSearchPageUI.NOTHING_FOUND_MESSAGE, message);
 	}
 }

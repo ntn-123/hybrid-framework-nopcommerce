@@ -42,28 +42,28 @@ public class AdminPostSearchPO extends BasePage{
 	}
 
 	public void selectPostCheckboxByTitle(String editPostTitle) {
-		// TODO Auto-generated method stub
-		
+		waitForElementClickable(driver, AdminPostSearchPageUI.ROW_CHECKBOX_BY_POST_TITLE_NAME, editPostTitle);
+		checkToDefaultCheckboxOrRadio(driver, AdminPostSearchPageUI.ROW_CHECKBOX_BY_POST_TITLE_NAME, editPostTitle);
 	}
 
-	public void selectItemInActionDropdown(String string) {
-		// TODO Auto-generated method stub
-		
+	public void selectItemInActionDropdown(String itemValue) {
+		waitForElementClickable(driver, AdminPostSearchPageUI.ACTION_DROPDOWN);
+		selectItemInDefaultDropdown(driver, AdminPostSearchPageUI.ACTION_DROPDOWN, itemValue);
 	}
 
 	public void clickToApplyButton() {
-		// TODO Auto-generated method stub
-		
+		waitForElementClickable(driver, AdminPostSearchPageUI.APPLY_BUTTON);
+		clickToElement(driver, AdminPostSearchPageUI.APPLY_BUTTON);
 	}
 
-	public boolean isMoveToTrashMessageDisplayed(String string) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isMoveToTrashMessageDisplayed(String message) {
+		waitForElementVisible(driver, AdminPostSearchPageUI.MOVE_TO_TRASH_MESSAGE, message);
+		return isElementDisplayed(driver, AdminPostSearchPageUI.MOVE_TO_TRASH_MESSAGE, message);
 	}
 
-	public boolean isNoPostsFoundMessageDisplayed(String string) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isNoPostsFoundMessageDisplayed(String message) {
+		waitForElementVisible(driver, AdminPostSearchPageUI.NO_POSTS_FOUND_MESSAGE, message);
+		return isElementDisplayed(driver, AdminPostSearchPageUI.NO_POSTS_FOUND_MESSAGE, message);
 	}
 
 
