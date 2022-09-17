@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -41,7 +43,12 @@ public class BaseTest {
 		
 		if(browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxProfile profile = new FirefoxProfile();
+			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "extension_2_0_12_0.crx");
+			profile.addExtension(file);
+			FirefoxOptions options = new FirefoxOptions();
+			options.setProfile(profile);
+			driver = new FirefoxDriver(options);
 		} else if(browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
@@ -50,7 +57,10 @@ public class BaseTest {
 			driver = new FirefoxDriver(options);
 		} else if(browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "to_google_translate-4.2.0.xpi");
+			ChromeOptions options = new ChromeOptions();
+			options.addExtensions(file);
+			driver = new ChromeDriver(options);
 		} else if(browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();

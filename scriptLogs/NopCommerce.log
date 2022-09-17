@@ -336,3 +336,18 @@ Session ID: d0ceceba-2f66-41e8-8c37-2d9ecaab2ee8
 [INFO ] [2022-09-14 15:37:10,940] Edit_Post - Step 13: Verify search table contain 'Edit Title4003'
 [INFO ] [2022-09-14 15:37:41,117] OS name = windows 10
 [INFO ] [2022-09-14 15:37:41,117] Driver instance name = firefoxdriver: firefox on windows (6c767a6e-fdc2-4225-83f3-fb1181862536)
+[INFO ] [2022-09-17 22:09:17,829] Register - Step 1: Click to register link
+[INFO ] [2022-09-17 22:09:21,974] Register - Step 3: Click to register button
+[INFO ] [2022-09-17 22:09:23,209] Register - Step 4: Verify register success
+[INFO ] [2022-09-17 22:09:23,260] Register - Step 5: Click to logout link
+[INFO ] [2022-09-17 22:09:24,308] Login - Step 01: Click to login link
+[INFO ] [2022-09-17 22:09:24,946] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-17 22:09:25,158] Login - Step 03: Click to login button
+[INFO ] [2022-09-17 22:09:26,120] Login - Step 04: Verify login success
+[INFO ] [2022-09-17 22:09:26,180]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-17 22:09:26,190] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-17 22:09:26,880] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-17 22:09:26,920]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-17 22:09:26,920] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-17 22:09:26,955] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-17 22:09:26,985] My account - Step 03: Verify 'Email' value is corrrectly

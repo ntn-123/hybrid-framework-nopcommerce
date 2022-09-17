@@ -1,51 +1,15 @@
-[INFO ] [2022-09-14 15:36:29,643] Pre-condition - Step 01: Open browser and admin site
-[INFO ] [2022-09-14 15:36:36,047] Pre-condition - Step 02: Enter to Username text box with value automationfc
-[INFO ] [2022-09-14 15:36:36,384] Pre-condition - Step 03: Enter to Password text box with value automationfc
-[INFO ] [2022-09-14 15:36:36,480] Pre-condition - Step 04: Click to Login button
-[INFO ] [2022-09-14 15:36:38,546] Create_Post - Step 01: Click to 'Posts' menu link
-[INFO ] [2022-09-14 15:36:40,236] Create_Post - Step 02: Get 'Search Posts' page Url
-[INFO ] [2022-09-14 15:36:40,242] Create_Post - Step 03: Click to 'Add new' button
-[INFO ] [2022-09-14 15:36:42,876] Create_Post - Step 3-2: Click to close button at popup
-[INFO ] [2022-09-14 15:36:46,228] Create_Post - Step 04: Enter to post title
-[INFO ] [2022-09-14 15:36:46,757] Create_Post - Step 05: Enter to post body
-[INFO ] [2022-09-14 15:36:47,595] Create_Post - Step 06: Enter to post body
-[INFO ] [2022-09-14 15:36:48,136] Create_Post - Step 07: Click to 'Publish' button
-[INFO ] [2022-09-14 15:36:48,491] Create_Post - Step 08: Click to 'Pre-Publish' button
-[INFO ] [2022-09-14 15:36:49,041] Create_Post - Step 09: Verify 'Post published.' message is displayed
-[INFO ] [2022-09-14 15:36:49,981]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:49,982] Search_Post - Step 01: Open 'Search Post' page
-[INFO ] [2022-09-14 15:36:51,116] Search_Post - Step 01: Open 'Search Post' page
-[INFO ] [2022-09-14 15:36:52,098] Search_Post - Step 02: Enter to search post textbox
-[INFO ] [2022-09-14 15:36:52,246] Search_Post - Step 03: Click to 'Search Posts' button
-[INFO ] [2022-09-14 15:36:53,651] Search_Post - Step 04: Verify search table contain 'Live Coding Title4003'
-[INFO ] [2022-09-14 15:36:53,782]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:53,782] Search_Post - Step 05: Verify search table contain 'Automation Admin'
-[INFO ] [2022-09-14 15:36:53,872]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:53,872] Search_Post - Step 06: Open End User Site
-[INFO ] [2022-09-14 15:36:55,724] Search_Post - Step 07: Verify Post info displayed at Home page
-[INFO ] [2022-09-14 15:36:55,810]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:55,888]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:55,949]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:56,019]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:56,019] Search_Post - Step 08: Click to Post tittle
-[INFO ] [2022-09-14 15:36:56,817] Search_Post - Step 09: Verify Post info displayed at Post detail page
-[INFO ] [2022-09-14 15:36:56,892]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:56,955]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:57,030]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:57,092]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:36:57,100] Edit_Post - Step 01: Open Admin site
-[INFO ] [2022-09-14 15:36:58,027] Edit_Post - Step 02: Click to 'Posts' menu link
-[INFO ] [2022-09-14 15:36:59,049] Edit_Post - Step 03: Enter to search post textbox
-[INFO ] [2022-09-14 15:36:59,207] Edit_Post - Step 04: Click to 'Search Posts' button
-[INFO ] [2022-09-14 15:37:00,751] Edit_Post - Step 05: Click to Post title link and navigate to edit post page
-[INFO ] [2022-09-14 15:37:02,688] Edit_Post - Step 06: Enter to post title
-[INFO ] [2022-09-14 15:37:03,314] Edit_Post - Step 07: Enter to post body
-[INFO ] [2022-09-14 15:37:04,980] Edit_Post - Step 08: Click to 'Update' button
-[INFO ] [2022-09-14 15:37:05,526] Edit_Post - Step 09: Verify 'Post updated.' message is displayed
-[INFO ] [2022-09-14 15:37:06,967]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-14 15:37:06,968] Edit_Post - Step 10: Open 'Search Post' page
-[INFO ] [2022-09-14 15:37:08,991] Edit_Post - Step 11: Enter to search post textbox
-[INFO ] [2022-09-14 15:37:09,151] Edit_Post - Step 12: Click to 'Search Posts' button
-[INFO ] [2022-09-14 15:37:10,940] Edit_Post - Step 13: Verify search table contain 'Edit Title4003'
-[INFO ] [2022-09-14 15:37:41,117] OS name = windows 10
-[INFO ] [2022-09-14 15:37:41,117] Driver instance name = firefoxdriver: firefox on windows (6c767a6e-fdc2-4225-83f3-fb1181862536)
+[INFO ] [2022-09-17 22:09:17,829] Register - Step 1: Click to register link
+[INFO ] [2022-09-17 22:09:21,974] Register - Step 3: Click to register button
+[INFO ] [2022-09-17 22:09:23,209] Register - Step 4: Verify register success
+[INFO ] [2022-09-17 22:09:23,260] Register - Step 5: Click to logout link
+[INFO ] [2022-09-17 22:09:24,308] Login - Step 01: Click to login link
+[INFO ] [2022-09-17 22:09:24,946] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-17 22:09:25,158] Login - Step 03: Click to login button
+[INFO ] [2022-09-17 22:09:26,120] Login - Step 04: Verify login success
+[INFO ] [2022-09-17 22:09:26,180]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-17 22:09:26,190] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-17 22:09:26,880] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-17 22:09:26,920]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-17 22:09:26,920] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-17 22:09:26,955] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-17 22:09:26,985] My account - Step 03: Verify 'Email' value is corrrectly
