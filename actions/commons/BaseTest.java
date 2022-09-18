@@ -1,6 +1,10 @@
+// sa
 package commons;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -41,6 +45,11 @@ public class BaseTest {
 		
 		if(browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
+			
+			// Disable log cua driver trong tab Console
+			//System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			//System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.BROWSER_LOG + "FirefoxLog.log");
+			
 			driver = new FirefoxDriver();
 		} else if(browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -50,6 +59,27 @@ public class BaseTest {
 			driver = new FirefoxDriver(options);
 		} else if(browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
+			
+			// Disable log cua driver trong tab Console
+			//System.setProperty("webdriver.chrome.args", "--disable-logging");
+			//System.setProperty("webdriver.chrome.silentOutput", "true");
+			
+			//ChromeOptions options = new ChromeOptions();
+			
+			//Map<String, Object> prefs = new HashMap<String, Object>();
+
+			// Auto save file download at folder downloadFiles
+			//prefs.put("profile.default_content_settings.popups", 0);
+			//prefs.put("download.default_directory", GlobalConstants.DOWNLOAD_FILE);
+			
+			// Disable notify save password on Chrome browser
+			//prefs.put("credentials_enable_service", false);
+			//prefs.put("profile.password_manager_enable", false);
+			
+			// Disable notify automation on Chrom browser
+			//options.setExperimentalOption("useAutomationExtension", false);
+			//options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			
 			driver = new ChromeDriver();
 		} else if(browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
@@ -268,7 +298,7 @@ public class BaseTest {
 				} else {
 					cmd = "pkill chromedriver";
 				}
-			} else if (driverInstanceName.contains("internetexplorer")) {
+			} else if (driverInstanceName.contains("internet explorer")) {
 				if (osName.contains("window")) {
 					cmd = "taskkill /F /FI \"IMAGENAME eq IEDriverServer*\"";
 				}

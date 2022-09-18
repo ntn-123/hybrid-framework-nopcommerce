@@ -421,3 +421,126 @@ Session ID: d0ceceba-2f66-41e8-8c37-2d9ecaab2ee8
 [INFO ] [2022-09-15 10:24:22,267] Delete_Post - Step 16: Verify 'Nothing found' message is displayed
 [INFO ] [2022-09-15 10:24:52,437] OS name = windows 10
 [INFO ] [2022-09-15 10:24:52,438] Driver instance name = firefoxdriver: firefox on windows (ba699b98-b348-46cf-89a6-3022efbb5e8c)
+[INFO ] [2022-09-18 10:03:48,505] Register - Step 1: Click to register link
+[INFO ] [2022-09-18 10:03:51,772] Register - Step 3: Click to register button
+[INFO ] [2022-09-18 10:03:52,586] Register - Step 4: Verify register success
+[INFO ] [2022-09-18 10:03:52,633] Register - Step 5: Click to logout link
+[INFO ] [2022-09-18 10:03:53,656] Login - Step 01: Click to login link
+[INFO ] [2022-09-18 10:03:54,255] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-18 10:03:54,596] Login - Step 03: Click to login button
+[INFO ] [2022-09-18 10:03:55,455] Login - Step 04: Verify login success
+[INFO ] [2022-09-18 10:03:55,556]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:03:55,565] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-18 10:03:56,104] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-18 10:03:56,222]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:03:56,222] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-18 10:03:56,308] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-18 10:03:56,409] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-18 10:03:56,541] OS name = windows 10
+[INFO ] [2022-09-18 10:03:56,541] Driver instance name = firefoxdriver: firefox on windows (b4558fae-ac12-4389-b995-94b06e3b50ac)
+[INFO ] [2022-09-18 10:06:12,564] Register - Step 1: Click to register link
+[INFO ] [2022-09-18 10:06:15,282] Register - Step 3: Click to register button
+[INFO ] [2022-09-18 10:06:16,189] Register - Step 4: Verify register success
+[INFO ] [2022-09-18 10:06:16,240] Register - Step 5: Click to logout link
+[INFO ] [2022-09-18 10:06:17,216] Login - Step 01: Click to login link
+[INFO ] [2022-09-18 10:06:17,820] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-18 10:06:18,103] Login - Step 03: Click to login button
+[INFO ] [2022-09-18 10:06:18,917] Login - Step 04: Verify login success
+[INFO ] [2022-09-18 10:06:19,009]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:06:19,021] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-18 10:06:19,635] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-18 10:06:19,736]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:06:19,737] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-18 10:06:19,803] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-18 10:06:19,868] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-18 10:06:19,976] OS name = windows 10
+[INFO ] [2022-09-18 10:06:19,977] Driver instance name = firefoxdriver: firefox on windows (61ac59c1-cf15-4352-bc85-117051bb965f)
+[INFO ] [2022-09-18 10:11:08,125] Register - Step 1: Click to register link
+[INFO ] [2022-09-18 10:11:11,275] Register - Step 3: Click to register button
+[INFO ] [2022-09-18 10:11:12,254] Register - Step 4: Verify register success
+[INFO ] [2022-09-18 10:11:12,313] Register - Step 5: Click to logout link
+[INFO ] [2022-09-18 10:11:13,250] Login - Step 01: Click to login link
+[INFO ] [2022-09-18 10:11:13,862] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-18 10:11:14,365] Login - Step 03: Click to login button
+[INFO ] [2022-09-18 10:11:15,279] Login - Step 04: Verify login success
+[INFO ] [2022-09-18 10:11:15,406]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:11:15,416] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-18 10:11:16,047] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-18 10:11:16,122]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:11:16,123] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-18 10:11:16,193] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-18 10:11:16,277] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-18 10:11:16,364] OS name = windows 10
+[INFO ] [2022-09-18 10:11:16,364] Driver instance name = chromedriver: chrome on windows (d137958677a96544b6977562c83fd662)
+[INFO ] [2022-09-18 10:44:28,248] Register - Step 1: Click to register link
+[INFO ] [2022-09-18 10:44:31,343] Register - Step 3: Click to register button
+[INFO ] [2022-09-18 10:44:32,226] Register - Step 4: Verify register success
+[INFO ] [2022-09-18 10:44:32,334] Register - Step 5: Click to logout link
+[INFO ] [2022-09-18 10:44:33,284] Login - Step 01: Click to login link
+[INFO ] [2022-09-18 10:44:33,866] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-18 10:44:34,157] Login - Step 03: Click to login button
+[INFO ] [2022-09-18 10:44:34,968] Login - Step 04: Verify login success
+[INFO ] [2022-09-18 10:44:35,061]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:44:35,086] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-18 10:44:35,629] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-18 10:44:35,694]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 10:44:35,694] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-18 10:44:35,753] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-18 10:44:35,816] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-18 10:44:35,900] OS name = windows 10
+[INFO ] [2022-09-18 10:44:35,900] Driver instance name = chromedriver: chrome on windows (c0c750a2751100768edfc78f809558c2)
+[INFO ] [2022-09-18 11:50:15,063] Register - Step 1: Click to register link
+[INFO ] [2022-09-18 11:50:26,161] Register - Step 3: Click to register button
+[INFO ] [2022-09-18 11:50:27,625] Register - Step 4: Verify register success
+[INFO ] [2022-09-18 11:50:28,097] Register - Step 5: Click to logout link
+[INFO ] [2022-09-18 11:50:29,702] Login - Step 01: Click to login link
+[INFO ] [2022-09-18 11:50:30,971] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-18 11:50:33,076] Login - Step 03: Click to login button
+[INFO ] [2022-09-18 11:50:34,830] Login - Step 04: Verify login success
+[INFO ] [2022-09-18 11:50:35,315]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 11:50:35,336] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-18 11:50:36,596] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-18 11:50:37,128]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 11:50:37,129] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-18 11:50:37,518] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-18 11:50:37,940] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-18 11:50:38,477] OS name = windows 10
+[INFO ] [2022-09-18 11:50:38,477] Driver instance name = internetexplorerdriver: internet explorer on windows (2321d301-0340-4bd3-8ee5-e5b46bff71c4)
+[INFO ] [2022-09-18 11:50:43,729] OS name = windows 10
+[INFO ] [2022-09-18 11:50:43,730] Driver instance name = internetexplorerdriver: internet explorer on windows (99e9245c-f5c4-44e7-9e89-4a9f9b1b9897)
+[INFO ] [2022-09-18 11:50:47,806] java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:23020
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: '7019NGUYENNT-DE', ip: '172.16.40.226', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: driver.version: RemoteWebDriver
+[INFO ] [2022-09-18 13:30:22,110] Register - Step 1: Click to register link
+[INFO ] [2022-09-18 13:30:33,318] Register - Step 3: Click to register button
+[INFO ] [2022-09-18 13:30:34,873] Register - Step 4: Verify register success
+[INFO ] [2022-09-18 13:30:35,386] Register - Step 5: Click to logout link
+[INFO ] [2022-09-18 13:30:37,049] Login - Step 01: Click to login link
+[INFO ] [2022-09-18 13:30:38,370] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-18 13:30:40,572] Login - Step 03: Click to login button
+[INFO ] [2022-09-18 13:30:42,130] Login - Step 04: Verify login success
+[INFO ] [2022-09-18 13:30:42,665]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 13:30:42,687] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-18 13:30:43,989] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-18 13:30:44,415]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 13:30:44,416] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-18 13:30:44,819] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-18 13:30:45,209] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-18 13:35:22,238] Register - Step 1: Click to register link
+[INFO ] [2022-09-18 13:35:33,209] Register - Step 3: Click to register button
+[INFO ] [2022-09-18 13:35:34,546] Register - Step 4: Verify register success
+[INFO ] [2022-09-18 13:35:34,981] Register - Step 5: Click to logout link
+[INFO ] [2022-09-18 13:35:36,435] Login - Step 01: Click to login link
+[INFO ] [2022-09-18 13:35:37,710] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-18 13:35:39,809] Login - Step 03: Click to login button
+[INFO ] [2022-09-18 13:35:41,360] Login - Step 04: Verify login success
+[INFO ] [2022-09-18 13:35:41,908]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 13:35:41,930] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-18 13:35:43,168] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-18 13:35:43,578]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-18 13:35:43,579] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-18 13:35:44,033] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-18 13:35:44,520] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-18 13:35:44,922] OS name = windows 10
+[INFO ] [2022-09-18 13:35:44,922] Driver instance name = internetexplorerdriver: internet explorer on windows (23aaabe0-2298-4611-8982-8cfd497f0349)

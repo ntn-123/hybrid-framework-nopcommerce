@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Nopcommerce User">
+<suite name="SauceLab - Sort">
 	
 	<listeners>
 		<listener class-name="commons.MethodListener"></listener>
 <!-- 		<listener class-name="reportConfig.AllureTestListener"></listener> -->
 	</listeners>
 	
-	<parameter name="environment" value="DEV"/>
+	<parameter name="appUrl" value="https://www.saucedemo.com/"/>
 	
-	<test name="Run test on IE">
-		<parameter name="browser" value="IE"/>
+	<test name="Run test on Firefox">
+		<parameter name="browser" value="firefox"/>
     	<classes>
-      		<class name="comNopcommerceUser.Level_18_Pattern_Object"/>
+      		<class name="comSaurcelabSort.Level_19_Sort_Asc_Desc"/>
     	</classes>
   	</test>
   
