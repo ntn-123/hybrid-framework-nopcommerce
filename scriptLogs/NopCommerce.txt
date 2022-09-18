@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [INFO ] [2022-09-17 22:09:17,829] Register - Step 1: Click to register link
 [INFO ] [2022-09-17 22:09:21,974] Register - Step 3: Click to register button
 [INFO ] [2022-09-17 22:09:23,209] Register - Step 4: Verify register success
@@ -13,3 +14,5 @@
 [INFO ] [2022-09-17 22:09:26,920] My account - Step 03: Verify 'First Name' value is corrrectly
 [INFO ] [2022-09-17 22:09:26,955] My account - Step 03: Verify 'Last Name' value is corrrectly
 [INFO ] [2022-09-17 22:09:26,985] My account - Step 03: Verify 'Email' value is corrrectly
+=======
+>>>>>>> branch 'master' of https://github.com/ntn-123/hybrid-framework-nopcommerce

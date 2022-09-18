@@ -37,16 +37,17 @@ public class UserHomePO extends BasePage{
 		return PageGeneratorManager.getUserPostDetailPage(driver);
 	}
 	public boolean isPostInfoUndisplayWithPostTitle(String editPostTitle) {
-		// TODO Auto-generated method stub
-		return false;
+		//waitForElementInvisible(driver, UserHomePageUI.POST_TITLE_TEXT, editPostTitle);
+		return isElementUndisplayed(driver, UserHomePageUI.POST_TITLE_TEXT, editPostTitle);
 	}
 	public void enterToSearchTextbox(String editPostTitle) {
-		// TODO Auto-generated method stub
-		
+		waitForElementClickable(driver, UserHomePageUI.SEARCH_TEXTBOX, editPostTitle);
+		sendKeyToElement(driver, UserHomePageUI.SEARCH_TEXTBOX, editPostTitle);
 	}
 	public UserPostSearchPO clickToSearchButton() {
-		// TODO Auto-generated method stub
-		return null;
+		waitForElementClickable(driver, UserHomePageUI.SEARCH_BUTTON);
+		clickToElement(driver, UserHomePageUI.SEARCH_BUTTON);
+		return PageGeneratorManager.getUserPostSearchPage(driver);
 	}
 
 

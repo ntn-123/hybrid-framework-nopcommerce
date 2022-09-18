@@ -11,8 +11,13 @@
 	
 	<parameter name="environment" value="DEV"/>
 	
+<<<<<<< HEAD
 	<test name="Run test on Chrome">
 		<parameter name="browser" value="chrome"/>
+=======
+	<test name="Run test on IE">
+		<parameter name="browser" value="IE"/>
+>>>>>>> branch 'master' of https://github.com/ntn-123/hybrid-framework-nopcommerce
     	<classes>
       		<class name="comNopcommerceUser.Level_18_Pattern_Object"/>
     	</classes>
