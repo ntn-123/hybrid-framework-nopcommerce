@@ -56,6 +56,15 @@ public class ProductPageObject extends BasePage{
 		return names.equals(sortNames);
 	}
 	
+	public boolean isProductNameSortByDescendingLamda() {
+		List<WebElement> elementLists = getListWebElement(driver, ProductPageUI.PRODUCT_NAME_TEXT);
+		List<String> names = elementLists.stream().map(n -> n.getText()).collect(Collectors.toList());
+		List<String> sortNames = new ArrayList<String>(names);
+		Collections.sort(sortNames);
+		Collections.reverse(sortNames);
+		return names.equals(sortNames);
+	}
+	
 	public boolean isProductNameSortByDescending() {
 		// Khai bao ra mot ArrayList de chua cac product name tren UI
 		ArrayList<String> productUIList = new ArrayList<>();

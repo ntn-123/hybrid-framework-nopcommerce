@@ -32,13 +32,13 @@ public class Level_19_Sort_Asc_Desc extends BaseTest{
 		productPage.selectItemInProductSortDropdown("Name (A to Z)");
 		
 		// 
-		Assert.assertTrue(productPage.isProductNameSortByAscending());
+		Assert.assertTrue(productPage.isProductNameSortByAscendingLamda());
 		
 		// Descending
 		productPage.selectItemInProductSortDropdown("Name (Z to A)");
 		
 		//
-		Assert.assertTrue(productPage.isProductNameSortByDescending());
+		Assert.assertTrue(productPage.isProductNameSortByDescendingLamda());
 	}
 	
 	@Test
