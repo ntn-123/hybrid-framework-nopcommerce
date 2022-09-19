@@ -1,4 +1,3 @@
-// sa
 package commons;
 
 import java.io.File;
@@ -47,21 +46,18 @@ public class BaseTest {
 		
 		if(browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
-<<<<<<< HEAD
-			FirefoxProfile profile = new FirefoxProfile();
-			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "extension_2_0_12_0.crx");
-			profile.addExtension(file);
-			FirefoxOptions options = new FirefoxOptions();
-			options.setProfile(profile);
-			driver = new FirefoxDriver(options);
-=======
+//			FirefoxProfile profile = new FirefoxProfile();
+//			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "extension_2_0_12_0.crx");
+//			profile.addExtension(file);
+//			FirefoxOptions options = new FirefoxOptions();
+//			options.setProfile(profile);
+//			driver = new FirefoxDriver(options);
 			
 			// Disable log cua driver trong tab Console
 			//System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
 			//System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.BROWSER_LOG + "FirefoxLog.log");
 			
 			driver = new FirefoxDriver();
->>>>>>> branch 'master' of https://github.com/ntn-123/hybrid-framework-nopcommerce
 		} else if(browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
@@ -70,12 +66,10 @@ public class BaseTest {
 			driver = new FirefoxDriver(options);
 		} else if(browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
-<<<<<<< HEAD
-			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "to_google_translate-4.2.0.xpi");
-			ChromeOptions options = new ChromeOptions();
-			options.addExtensions(file);
-			driver = new ChromeDriver(options);
-=======
+//			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "to_google_translate-4.2.0.xpi");
+//			ChromeOptions options = new ChromeOptions();
+//			options.addExtensions(file);
+//			driver = new ChromeDriver(options);
 			
 			// Disable log cua driver trong tab Console
 			//System.setProperty("webdriver.chrome.args", "--disable-logging");
@@ -98,7 +92,6 @@ public class BaseTest {
 			//options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 			
 			driver = new ChromeDriver();
->>>>>>> branch 'master' of https://github.com/ntn-123/hybrid-framework-nopcommerce
 		} else if(browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
