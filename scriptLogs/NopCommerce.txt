@@ -1,0 +1,15 @@
+[INFO ] [2022-09-20 15:36:32,533] Register - Step 1: Click to register link
+[INFO ] [2022-09-20 15:36:35,326] Register - Step 3: Click to register button
+[INFO ] [2022-09-20 15:36:36,876] Register - Step 4: Verify register success
+[INFO ] [2022-09-20 15:36:36,991] Register - Step 5: Click to logout link
+[INFO ] [2022-09-20 15:36:38,022] Login - Step 01: Click to login link
+[INFO ] [2022-09-20 15:36:38,716] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-20 15:36:39,133] Login - Step 03: Click to login button
+[INFO ] [2022-09-20 15:36:39,984] Login - Step 04: Verify login success
+[INFO ] [2022-09-20 15:36:40,084]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-20 15:36:40,112] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-20 15:36:40,766] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-20 15:36:40,847]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-20 15:36:40,848] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-20 15:36:40,944] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-20 15:36:41,023] My account - Step 03: Verify 'Email' value is corrrectly
