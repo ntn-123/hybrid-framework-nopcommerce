@@ -7,14 +7,17 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import comNopcommerceData.UserData;
 import commons.BaseTest;
-import pageObjectsNopcommerceUser.*;
-import utilities.DataHelper;
+import pageObjectsNopcommerceUser.PageGeneratorManagerNopcommerce;
+import pageObjectsNopcommerceUser.UserCustomerInfoPageObject;
+import pageObjectsNopcommerceUser.UserHomePageObject;
+import pageObjectsNopcommerceUser.UserLoginPageObject;
+import pageObjectsNopcommerceUser.UserRegisterPageObject;
 
-public class Level_20_Fake_Data extends BaseTest{
+public class Level_21_Manage_Data extends BaseTest{
 	
 	private WebDriver driver;
-	private DataHelper dataFaker;
 	private String firstName, lastName, emailAddress, password;
 	private String date, month, year, gender;
 	private UserHomePageObject homePage;
@@ -28,15 +31,14 @@ public class Level_20_Fake_Data extends BaseTest{
 		driver = getBrowserDriver(browserName);
 		homePage = PageGeneratorManagerNopcommerce.getUserHomePage(driver);
 
-		dataFaker = new DataHelper();
-		firstName = dataFaker.getFirstName();
-		lastName = dataFaker.getLastName();
-		emailAddress = dataFaker.getEmailAddress();
-		password = dataFaker.getPassword();
-		date = "10";
-		month = "September";
-		year = "1998";
-		gender = "Female";
+		firstName = UserData.Register.FIRST_NAME;
+		lastName = UserData.Register.LAST_NAME;
+		emailAddress = UserData.Register.EMAIL_ADDRESS + getRandomNumber() + "@hotmail.net";
+		password = UserData.Register.PASSWORD;
+		date = UserData.Register.DAY;
+		month = UserData.Register.MONTH;
+		year = UserData.Register.YEAR;
+		gender = UserData.Register.GENDER;
 	}
 	
 	@Test

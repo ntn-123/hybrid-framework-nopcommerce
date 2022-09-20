@@ -1,15 +1,17 @@
-[INFO ] [2022-09-20 15:36:32,533] Register - Step 1: Click to register link
-[INFO ] [2022-09-20 15:36:35,326] Register - Step 3: Click to register button
-[INFO ] [2022-09-20 15:36:36,876] Register - Step 4: Verify register success
-[INFO ] [2022-09-20 15:36:36,991] Register - Step 5: Click to logout link
-[INFO ] [2022-09-20 15:36:38,022] Login - Step 01: Click to login link
-[INFO ] [2022-09-20 15:36:38,716] Login - Step 02: Input existing email and password
-[INFO ] [2022-09-20 15:36:39,133] Login - Step 03: Click to login button
-[INFO ] [2022-09-20 15:36:39,984] Login - Step 04: Verify login success
-[INFO ] [2022-09-20 15:36:40,084]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-20 15:36:40,112] MyAccount - Step 01: Click to My Account link
-[INFO ] [2022-09-20 15:36:40,766] My account - Step 02: Verify Customer Info page is displayed
-[INFO ] [2022-09-20 15:36:40,847]  -------------------------- PASSED -------------------------- 
-[INFO ] [2022-09-20 15:36:40,848] My account - Step 03: Verify 'First Name' value is corrrectly
-[INFO ] [2022-09-20 15:36:40,944] My account - Step 03: Verify 'Last Name' value is corrrectly
-[INFO ] [2022-09-20 15:36:41,023] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-20 21:27:28,814] Register - Step 1: Click to register link
+[INFO ] [2022-09-20 21:27:32,077] Register - Step 3: Click to register button
+[INFO ] [2022-09-20 21:27:33,318] Register - Step 4: Verify register success
+[INFO ] [2022-09-20 21:27:33,366] Register - Step 5: Click to logout link
+[INFO ] [2022-09-20 21:27:34,466] Login - Step 01: Click to login link
+[INFO ] [2022-09-20 21:27:35,061] Login - Step 02: Input existing email and password
+[INFO ] [2022-09-20 21:27:35,272] Login - Step 03: Click to login button
+[INFO ] [2022-09-20 21:27:36,116] Login - Step 04: Verify login success
+[INFO ] [2022-09-20 21:27:36,179]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-20 21:27:36,190] MyAccount - Step 01: Click to My Account link
+[INFO ] [2022-09-20 21:27:36,821] My account - Step 02: Verify Customer Info page is displayed
+[INFO ] [2022-09-20 21:27:36,858]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-09-20 21:27:36,858] My account - Step 03: Verify 'First Name' value is corrrectly
+[INFO ] [2022-09-20 21:27:36,896] My account - Step 03: Verify 'Last Name' value is corrrectly
+[INFO ] [2022-09-20 21:27:36,926] My account - Step 03: Verify 'Email' value is corrrectly
+[INFO ] [2022-09-20 21:27:36,974] OS name = mac os x
+[INFO ] [2022-09-20 21:27:36,975] Driver instance name = chromedriver: chrome on mac (d1fe169519e02a69a51135d45c56a1bf)
