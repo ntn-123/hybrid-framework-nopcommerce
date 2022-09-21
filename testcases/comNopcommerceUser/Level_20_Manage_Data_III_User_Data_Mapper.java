@@ -8,6 +8,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import comNopcommerceData.UserData;
+import comNopcommerceData.UserDataMapper;
 import commons.BaseTest;
 import pageObjectsNopcommerceUser.PageGeneratorManagerNopcommerce;
 import pageObjectsNopcommerceUser.UserCustomerInfoPageObject;
@@ -15,7 +16,7 @@ import pageObjectsNopcommerceUser.UserHomePageObject;
 import pageObjectsNopcommerceUser.UserLoginPageObject;
 import pageObjectsNopcommerceUser.UserRegisterPageObject;
 
-public class Level_21_Manage_Data extends BaseTest{
+public class Level_20_Manage_Data_III_User_Data_Mapper extends BaseTest{
 	
 	private WebDriver driver;
 	private String firstName, lastName, emailAddress, password;
@@ -25,20 +26,29 @@ public class Level_21_Manage_Data extends BaseTest{
 	private UserLoginPageObject loginPage;
 	private UserCustomerInfoPageObject customerInfoPage;
 	
+	private UserDataMapper userData;
+	
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
 		homePage = PageGeneratorManagerNopcommerce.getUserHomePage(driver);
+		
+		userData = UserDataMapper.getUserData();
 
-		firstName = UserData.Register.FIRST_NAME;
-		lastName = UserData.Register.LAST_NAME;
-		emailAddress = UserData.Register.EMAIL_ADDRESS + getRandomNumber() + "@hotmail.net";
-		password = UserData.Register.PASSWORD;
-		date = UserData.Register.DAY;
-		month = UserData.Register.MONTH;
-		year = UserData.Register.YEAR;
-		gender = UserData.Register.GENDER;
+		firstName = userData.getFirstName();
+		lastName = userData.getLastName();
+		emailAddress = userData.getEmailAddress() + getRandomNumber() + "@hotmail.net";
+		password = userData.getPassword();
+		date = userData.getDay();
+		month = userData.getMonth();
+		year = userData.getYear();
+		gender = userData.getGender();
+		
+		System.out.println(userData.getSubjects().get(0).getName());
+		System.out.println(userData.getSubjects().get(0).getPoint());
+		System.out.println(userData.getSubjects().get(1).getName());
+		System.out.println(userData.getSubjects().get(1).getPoint());
 	}
 	
 	@Test

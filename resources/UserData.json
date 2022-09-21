@@ -1,0 +1,26 @@
+{
+	"register": {
+		"firstName": "Sa first",
+		"lastName": "Sa last",
+		"emailAddress": "sa",
+		"password": "123456",
+		"day": "10",
+		"month": "October",
+		"year": "1999",
+		"gender": "Female"
+	},
+	"login": {
+		"username": "Sa",
+		"password": "123456"
+	},
+	"subjects": [
+		{
+			"name": "Math",
+			"point": "10.0"
+		},
+		{
+			"name": "Physical",
+			"point": "8.5"
+		}
+	]
+}
