@@ -5,16 +5,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class SQLServerJTDSTestConnection {
+public class SQLServerTestConnection {
 	public static Connection getMyConnection() throws SQLException, ClassNotFoundException{
-		return SQLServerJTDSConnUtils.getSQLServerConnection();
+		return SQLServerConnUtils.getSQLServerConnection();
 	}
 	
 	public static void main(String[] args) throws SQLException, ClassNotFoundException{
-		System.out.println("Get connection ...");
+		System.out.println("Get connection...");
 		
-		// Lay ra doi tuong Connection ket noi vao Database
-		Connection conn = SQLServerJTDSTestConnection.getMyConnection();
+		// Lay ra doi tuong Connection ket noi vao database
+		Connection conn = SQLServerTestConnection.getMyConnection();
 		
 		System.out.println("Opened connection: " + conn);
 		
@@ -22,7 +22,7 @@ public class SQLServerJTDSTestConnection {
 		
 		String sql = "SELECT * FROM [automationtest].[dbo].[Product_Type];";
 		
-		// Thu thi cau lenh SQL tra ve doi tuong ResultSet
+		// Thuc thi cau lenh SQL tra ve doi tuong ResultSet
 		ResultSet rs = statement.executeQuery(sql);
 		
 		// Duyet tren ket qua tra ve
@@ -39,7 +39,5 @@ public class SQLServerJTDSTestConnection {
 		// Dong ket noi
 		conn.close();
 		System.out.println("-----------Close connection--------------");
-		
 	}
-	
 }

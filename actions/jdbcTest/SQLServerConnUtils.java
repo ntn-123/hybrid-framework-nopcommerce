@@ -3,7 +3,7 @@ package jdbcTest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class SQLServerJTDSConnUtils {
+public class SQLServerConnUtils {
 	public static Connection getSQLServerConnection() {
 		String hostName = "localhost";
 		String sqlInstanceName = "SQLEXPRESS";
@@ -17,15 +17,10 @@ public class SQLServerJTDSConnUtils {
 	private static Connection getSQLServerConnection(String hostName, String sqlInstanceName, String database, String userName, String password) {
 		Connection conn = null;
 		try {
-			// Khai bao class Driver cho SQLServer
-			// Viec nay can thiet voi Java 5
-			// Java 6 tu dong tim kiem Driver thich hop - khong bat buoc can dong nay
-			//Class.forName("net.sourceforge.jtds.jdbc.Driver");
+			// Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			
-			// Cau truc URL Connection danh cho SQL Server
-			//String connectionURL = "jdbc:sqlserver://" + hostName + ":1433" + ";instance=" + sqlInstanceName + ";databaseName=" + database;
-			String connectionURL = "jdbc:jtds:sqlserver://" + hostName + ":1433/" + database + ";instance=" + sqlInstanceName;
-			
+			// Cau tru SQL Connection danh cho SQL Server
+			String connectionURL = "jdbc:sqlserver://" + hostName + ":1433" + ";instance=" + sqlInstanceName + ";databaseName=" + database;
 			conn = DriverManager.getConnection(connectionURL, userName, password);
 		} catch (Exception e) {
 			e.printStackTrace();
