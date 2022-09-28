@@ -147,7 +147,7 @@ public class BaseTest {
 		return driver;
 	}
 	
-	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
+	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
 		if(browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			//FirefoxOptions options = new FirefoxOptions();
@@ -208,8 +208,9 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 
 		//driver.get(GlobalConstants.USER_DEV_URL);
-		driver.get(appUrl);
+		//driver.get(appUrl);
 		//driver.get("http://live.techpanda.org/");
+		driver.get(getEnvironmentUrl(environmentName));
 		return driver;
 	}
 	
@@ -217,9 +218,9 @@ public class BaseTest {
 		return this.driver;
 	}
 	
-	protected String getEnvironmentUrl(String serverName) {
+	protected String getEnvironmentUrl(String environmentName) {
 		String envUrl = null;
-		EnvironmentList environment = EnvironmentList.valueOf(serverName.toUpperCase());
+		EnvironmentList environment = EnvironmentList.valueOf(environmentName.toUpperCase());
 		if(environment == EnvironmentList.DEV) {
 			envUrl = GlobalConstants.USER_DEV_URL;
 		} else if (environment == EnvironmentList.TESTING) {

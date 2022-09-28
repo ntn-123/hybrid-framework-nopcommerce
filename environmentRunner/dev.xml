@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Nopcommerce User">
+	
+	<listeners>
+		<listener class-name="commons.MethodListener"></listener>
+<!-- 		<listener class-name="reportConfig.ReportNGListener" /> -->
+<!-- 		<listener class-name="reportConfig.AllureTestListener"></listener> -->
+<!-- 		<listener class-name="org.uncommons.reportng.HTMLReporter" /> -->
+<!-- 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
+	</listeners>
+	
+	<parameter name="url" value="https://demo.nopcommerce.com/"/>
+
+	<test name="Run test on Chrome">
+		<parameter name="browser" value="chrome"/>
+    	<classes>
+      		<class name="comNopcommerceUser.Level_20_Manage_Data_III_User_Data_Mapper"/>
+    	</classes>
+  	</test>
+  
+</suite>
