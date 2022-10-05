@@ -37,4 +37,8 @@ public class GlobalConstants {
 	
 	public static final String TECH_PANDA_USER_TESTING_URL = "http://live.techpanda.org/";
 	public static final String TECH_PANDA_ADMIN_TESTING_URL = "http://live.techpanda.org/index.php/backendlogin/customer/";
+	
+	public static final String BROWSER_USERNAME = "automationfc1";
+	public static final String BROWSER_AUTOMATE_KEY = "";
+	public static final String BROWSER_STACK_URL = "https://" + BROWSER_USERNAME + ":" + BROWSER_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 }

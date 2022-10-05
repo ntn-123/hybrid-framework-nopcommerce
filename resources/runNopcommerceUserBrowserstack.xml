@@ -3,18 +3,29 @@
 	
 	<listeners>
 		<listener class-name="commons.MethodListener"></listener>
-<!-- 		<listener class-name="reportConfig.ReportNGListener" /> -->
+		<listener class-name="reportConfig.ReportNGListener" />
 <!-- 		<listener class-name="reportConfig.AllureTestListener"></listener> -->
 <!-- 		<listener class-name="org.uncommons.reportng.HTMLReporter" /> -->
 <!-- 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
 	</listeners>
 	
-	<parameter name="environment" value="dev"/>
+	<parameter name="url" value="https://demo.nopcommerce.com/"/>
+
+	<test name="Run test on Firefox">
+		<parameter name="browser" value="Firefox"/>
+		<parameter name="osName" value="Windows"/>
+		<parameter name="osVersion" value="10"/>
+    	<classes>
+      		<class name="comNopcommerceCloud.Level_20_Manage_Data_III_Browserstack"/>
+    	</classes>
+  	</test>
 
 	<test name="Run test on Chrome">
-		<parameter name="browser" value="chrome"/>
+		<parameter name="browser" value="Chrome"/>
+		<parameter name="osName" value="OS X"/>
+		<parameter name="osVersion" value="Big Sur"/>
     	<classes>
-      		<class name="comNopcommerceUser.Level_20_Manage_Data_III_Browserstack"/>
+      		<class name="comNopcommerceCloud.Level_20_Manage_Data_III_Browserstack"/>
     	</classes>
   	</test>
   

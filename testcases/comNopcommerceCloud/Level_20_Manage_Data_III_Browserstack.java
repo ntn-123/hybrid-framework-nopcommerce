@@ -27,10 +27,10 @@ public class Level_20_Manage_Data_III_Browserstack extends BaseTest{
 	
 	private UserDataMapper userData;
 	
-	@Parameters("browser")
+	@Parameters({"browser", "url", "osName", "osVersion"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName);
+	public void beforeClass(String browserName, String appUrl, String osName, String osVersion) {
+		driver = getBrowserDriverBrowserstack(browserName, appUrl, osName, osVersion);
 		homePage = PageGeneratorManagerNopcommerce.getUserHomePage(driver);
 		
 		userData = UserDataMapper.getUserData();
