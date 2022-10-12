@@ -14,6 +14,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -144,6 +145,93 @@ public class BaseTest {
 		} else {
 			throw new RuntimeException("Browser name invalid"); 
 		}
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+
+		driver.get(GlobalConstants.USER_DEV_URL);
+		//driver.get("http://live.techpanda.org/");
+		return driver;
+	}
+	
+
+	protected WebDriver getBrowserDriver(String browserName, String ipAddress, String portNumber) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		DesiredCapabilities capability = null;
+		
+		if(browserList == BrowserList.FIREFOX) {
+			WebDriverManager.firefoxdriver().setup();
+			capability = DesiredCapabilities.firefox();
+			capability.setBrowserName("firefox");
+			capability.setPlatform(Platform.WINDOWS);
+			FirefoxOptions options = new FirefoxOptions();
+			options.merge(capability);
+		} else if(browserList == BrowserList.H_FIREFOX) {
+			WebDriverManager.firefoxdriver().setup();
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new FirefoxDriver(options);
+		} else if(browserList == BrowserList.CHROME) {
+			WebDriverManager.chromedriver().setup();
+			capability = DesiredCapabilities.chrome();
+			capability.setBrowserName("chrome");
+			capability.setPlatform(Platform.WINDOWS);
+			ChromeOptions options = new ChromeOptions();
+			options.merge(capability);
+		} else if(browserList == BrowserList.H_CHROME) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new ChromeDriver(options);
+		} else if(browserList == BrowserList.EDGE) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		} else if(browserList == BrowserList.SAFARI) {
+			driver = new SafariDriver();
+		} else if(browserList == BrowserList.IE) {
+			WebDriverManager.iedriver().arch32().setup();
+			driver = new InternetExplorerDriver();
+		} else if(browserList == BrowserList.OPERA) {
+			WebDriverManager.operadriver().setup();
+			driver = new OperaDriver();
+		} else if(browserList == BrowserList.COCCOC) {
+			// Coc Coc browser tru di 5-6 version ra chromedriver
+			if(osName.toLowerCase().contains("win")) {
+				WebDriverManager.chromedriver().driverVersion("101.0.4951.41").setup();
+				ChromeOptions options = new ChromeOptions();
+				options.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
+				driver = new ChromeDriver(options);
+			} else {
+				WebDriverManager.chromedriver().driverVersion("101.0.4951.41").setup();
+				ChromeOptions options = new ChromeOptions();
+				options.setBinary("/Applications/CocCoc.app");
+				driver = new ChromeDriver(options);
+			}
+			
+		} else if(browserList == BrowserList.BRAVE) {
+			/// Brave browser version nao dung chromedriver version do
+			if(osName.toLowerCase().contains("win")) {
+				WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
+				ChromeOptions options = new ChromeOptions();
+				options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+				driver = new ChromeDriver(options);
+			} else {
+				WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
+				ChromeOptions options = new ChromeOptions();
+				options.setBinary("/Applications/Brave Browser.app");
+				driver = new ChromeDriver(options);
+			}
+			
+		} else {
+			throw new RuntimeException("Browser name invalid"); 
+		}
+		
+		try {
+			driver = new RemoteWebDriver(new URL(String.format("http://%s:%s/wd/hub", ipAddress, portNumber)), capability);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 
 		driver.get(GlobalConstants.USER_DEV_URL);
