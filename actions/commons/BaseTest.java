@@ -1,12 +1,8 @@
 package commons;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +16,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -29,12 +24,19 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import factoryBrowser.BrowserNotSupportedException;
+import factoryBrowser.ChromeDriverManager;
+import factoryBrowser.EdgeDriverManager;
+import factoryBrowser.FirefoxDriverManager;
+import factoryBrowser.HeadlessChromeDriverManager;
+import factoryBrowser.HeadlessFirefoxDriverManager;
+import factoryBrowser.IEDriverManager;
+import factoryBrowser.SafariDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
 	protected final Log log;
-	private String osName = System.getProperty("os.name");
 	
 //	@BeforeSuite
 //	public void initBeforeSuite() {
@@ -48,101 +50,30 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		
-		if(browserList == BrowserList.FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
-//			FirefoxProfile profile = new FirefoxProfile();
-//			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "extension_2_0_12_0.crx");
-//			profile.addExtension(file);
-//			FirefoxOptions options = new FirefoxOptions();
-//			options.setProfile(profile);
-//			driver = new FirefoxDriver(options);
-			
-			// Disable log cua driver trong tab Console
-			//System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-			//System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.BROWSER_LOG + "FirefoxLog.log");
-			
-			driver = new FirefoxDriver();
-		} else if(browserList == BrowserList.H_FIREFOX) {
-			WebDriverManager.firefoxdriver().setup();
-			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--headless");
-			options.addArguments("window-size=1920x1080");
-			driver = new FirefoxDriver(options);
-		} else if(browserList == BrowserList.CHROME) {
-			WebDriverManager.chromedriver().setup();
-//			File file = new File(GlobalConstants.BROWSER_EXTENSIONS_FILE + "to_google_translate-4.2.0.xpi");
-//			ChromeOptions options = new ChromeOptions();
-//			options.addExtensions(file);
-//			driver = new ChromeDriver(options);
-			
-			// Disable log cua driver trong tab Console
-			//System.setProperty("webdriver.chrome.args", "--disable-logging");
-			//System.setProperty("webdriver.chrome.silentOutput", "true");
-			
-			//ChromeOptions options = new ChromeOptions();
-			
-			//Map<String, Object> prefs = new HashMap<String, Object>();
-
-			// Auto save file download at folder downloadFiles
-			//prefs.put("profile.default_content_settings.popups", 0);
-			//prefs.put("download.default_directory", GlobalConstants.DOWNLOAD_FILE);
-			
-			// Disable notify save password on Chrome browser
-			//prefs.put("credentials_enable_service", false);
-			//prefs.put("profile.password_manager_enable", false);
-			
-			// Disable notify automation on Chrom browser
-			//options.setExperimentalOption("useAutomationExtension", false);
-			//options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-			
-			driver = new ChromeDriver();
-		} else if(browserList == BrowserList.H_CHROME) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless");
-			options.addArguments("window-size=1920x1080");
-			driver = new ChromeDriver(options);
-		} else if(browserList == BrowserList.EDGE) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		} else if(browserList == BrowserList.SAFARI) {
-			driver = new SafariDriver();
-		} else if(browserList == BrowserList.IE) {
-			WebDriverManager.iedriver().arch32().setup();
-			driver = new InternetExplorerDriver();
-		} else if(browserList == BrowserList.OPERA) {
-			WebDriverManager.operadriver().setup();
-			driver = new OperaDriver();
-		} else if(browserList == BrowserList.COCCOC) {
-			// Coc Coc browser tru di 5-6 version ra chromedriver
-			if(osName.toLowerCase().contains("win")) {
-				WebDriverManager.chromedriver().driverVersion("101.0.4951.41").setup();
-				ChromeOptions options = new ChromeOptions();
-				options.setBinary("C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe");
-				driver = new ChromeDriver(options);
-			} else {
-				WebDriverManager.chromedriver().driverVersion("101.0.4951.41").setup();
-				ChromeOptions options = new ChromeOptions();
-				options.setBinary("/Applications/CocCoc.app");
-				driver = new ChromeDriver(options);
-			}
-			
-		} else if(browserList == BrowserList.BRAVE) {
-			/// Brave browser version nao dung chromedriver version do
-			if(osName.toLowerCase().contains("win")) {
-				WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
-				ChromeOptions options = new ChromeOptions();
-				options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
-				driver = new ChromeDriver(options);
-			} else {
-				WebDriverManager.chromedriver().driverVersion("102.0.5005.61").setup();
-				ChromeOptions options = new ChromeOptions();
-				options.setBinary("/Applications/Brave Browser.app");
-				driver = new ChromeDriver(options);
-			}
-			
-		} else {
-			throw new RuntimeException("Browser name invalid"); 
+		switch (browserList) {
+		case CHROME:
+			driver = new ChromeDriverManager().getBrowserDriver();
+			break;
+		case H_CHROME:
+			driver = new HeadlessChromeDriverManager().getBrowserDriver();
+			break;
+		case FIREFOX:
+			driver = new FirefoxDriverManager().getBrowserDriver();
+			break;
+		case H_FIREFOX:
+			driver = new HeadlessFirefoxDriverManager().getBrowserDriver();
+			break;
+		case IE:
+			driver = new IEDriverManager().getBrowserDriver();
+			break;
+		case EDGE:
+			driver = new EdgeDriverManager().getBrowserDriver();
+			break;
+		case SAFARI:
+			driver = new SafariDriverManager().getBrowserDriver();
+			break;
+		default:
+			throw new BrowserNotSupportedException(browserName);
 		}
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 
