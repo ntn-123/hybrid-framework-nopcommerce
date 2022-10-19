@@ -38,6 +38,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	private WebDriver driver;
 	protected final Log log;
+	private String osName = System.getProperty("os.name");
 	
 //	@BeforeSuite
 //	public void initBeforeSuite() {
