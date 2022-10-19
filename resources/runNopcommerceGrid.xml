@@ -13,9 +13,11 @@
 
 	<test name="Run test on Chrome">
 		<parameter name="browser" value="chrome"/>
+		<parameter name="ipAddress" value="172.16.40.226"/>
+		<parameter name="port" value="5555"/>
 		
     	<classes>
-      		<class name="comNopcommerceUser.Level_20_Manage_Data_III_User_Data_Mapper"/>
+      		<class name="comNopcommerceCloud.Level_20_Manage_Data_III_Grid"/>
     	</classes>
   	</test>
   
