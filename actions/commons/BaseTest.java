@@ -46,7 +46,7 @@ public class BaseTest {
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
 	}
-	
+
 	protected WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		
