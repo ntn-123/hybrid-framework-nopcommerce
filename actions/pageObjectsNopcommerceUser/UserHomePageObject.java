@@ -17,7 +17,7 @@ public class UserHomePageObject extends BasePage {
 	@Step("Click to register link")
 	public UserRegisterPageObject clickToRegisterLink() {
 		waitForElementClickable(driver, UserHomePageUI.REGISTER_LINK);
-		clickToElement(driver, UserHomePageUI.REGISTER_LINK);
+		clickToElementByJS(driver, UserHomePageUI.REGISTER_LINK);
 		return PageGeneratorManagerNopcommerce.getUserRegisterPage(driver);
 	}
 

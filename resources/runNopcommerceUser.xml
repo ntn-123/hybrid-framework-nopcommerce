@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Nopcommerce User">
+<suite name="Nopcommerce User" parallel="tests" thread-count="3">
 	
 	<listeners>
 		<listener class-name="commons.MethodListener"></listener>
@@ -8,8 +8,6 @@
 <!-- 		<listener class-name="org.uncommons.reportng.HTMLReporter" /> -->
 <!-- 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
 	</listeners>
-	
-	<parameter name="environment" value="dev"/>
 
 	<test name="Run test on Chrome">
 		<parameter name="browser" value="chrome"/>
@@ -18,5 +16,21 @@
       		<class name="comNopcommerceUser.Level_20_Manage_Data_III_User_Data_Mapper"/>
     	</classes>
   	</test>
-  
+
+	<test name="Run test on Firefox">
+		<parameter name="browser" value="firefox"/>
+		
+    	<classes>
+      		<class name="comNopcommerceUser.Level_20_Manage_Data_III_User_Data_Mapper"/>
+    	</classes>
+  	</test>
+
+	<test name="Run test on Safari">
+		<parameter name="browser" value="safari"/>
+		
+    	<classes>
+      		<class name="comNopcommerceUser.Level_20_Manage_Data_III_User_Data_Mapper"/>
+    	</classes>
+  	</test>
+
 </suite>

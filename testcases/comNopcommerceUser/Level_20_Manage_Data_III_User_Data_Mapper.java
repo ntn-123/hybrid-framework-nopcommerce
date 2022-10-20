@@ -51,7 +51,7 @@ public class Level_20_Manage_Data_III_User_Data_Mapper extends BaseTest{
 	}
 	
 	@Test
-	public void User_01_Register_Login() {
+	public void User_01_Register() {
 
 		log.info("Register - Step 1: Click to register link");
 		registerPage = homePage.clickToRegisterLink();
@@ -80,7 +80,7 @@ public class Level_20_Manage_Data_III_User_Data_Mapper extends BaseTest{
 	
 	}
 
-	@Test
+	//@Test
 	public void User_02_Login() {
 		log.info("Login - Step 01: Click to login link");
 		loginPage = homePage.clickToLoginLink();
@@ -98,7 +98,7 @@ public class Level_20_Manage_Data_III_User_Data_Mapper extends BaseTest{
 		
 	}
 	
-	@Test
+	//@Test
 	public void User_03_My_Account() {
 		log.info("MyAccount - Step 01: Click to My Account link");
 		customerInfoPage = homePage.clickToMyAccountLink();

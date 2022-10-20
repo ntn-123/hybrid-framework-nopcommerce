@@ -666,7 +666,7 @@ public class BasePage {
 	 */
 	public void clickToButtonByText(WebDriver driver, String buttonText) {
 		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
-		clickToElement(driver, BasePageNopcommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+		clickToElementByJS(driver, BasePageNopcommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
 	}
 
 	/**
