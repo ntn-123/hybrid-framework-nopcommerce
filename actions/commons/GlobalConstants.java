@@ -2,7 +2,22 @@ package commons;
 
 import java.io.File;
 
+import lombok.Getter;
+
+@Getter
 public class GlobalConstants {
+	private static GlobalConstants globalInstance;
+	
+	private GlobalConstants() {
+		
+	}
+	
+	public static synchronized GlobalConstants getGlobalConstants() {
+		if(globalInstance == null) {
+			globalInstance = new GlobalConstants();
+		}
+		return globalInstance;
+	}
 	// dev
 	public static final String USER_DEV_URL = "https://demo.nopcommerce.com/";
 	public static final String ADMIN_DEV_URL = "https://admin-demo.nopcommerce.com/login";
